@@ -1,0 +1,100 @@
+## Today's plan
+
+<br/>
+
+::: incremental
+1.  What is democracy?
+2.  What are the main characteristics of democracy
+3.  What are the historical trends of democracy?
+4.  How is democracy doing around the world today?
+5.  How do democracies balance the tension between limited and effective government?
+:::
+
+## What is **Democracy**?
+
+<br/>
+
+::: incremental
+-   A political system in which the rulers are accountable to the ruled
+
+<br/>
+
+-   It is important to note that there is no definitive definition of democracy. It evolves all the time and no state fits it perfectly!
+:::
+
+## Characteristics of Democracy
+
+<br/>
+
+::: incremental
+-   **Accountability:** A political mechanism that gives citizens opportunities to remove the rulers from office
+
+-   **Participation:** Adult citizens have the right to participate in elections
+
+-   **Contestation:** Real competition for power among various parties
+:::
+
+## Participation and Contestation (Dahl)
+
+![](/Users/sergiobejar/sergiobejar/images/poly.jpg){fig-align="center" height="500"}
+
+## Participation and Contestation, Examples
+
+![](/Users/sergiobejar/sergiobejar/images/samuels1.png){fig-align="center" height="600"}
+
+## Requirements for Democracy
+
+<br/>
+
+::: incremental
+-   Elected Government
+
+-   Civil Liberties
+
+-   Fair and Frequent Elections
+:::
+
+## Wrapping Up: Core Elements of Democracy
+
+![](/Users/sergiobejar/sergiobejar/images/core.png){fig-align="center" height="600"}
+
+## Assessing the Quality of Democracy: [Freedom House](https://freedomhouse.org/)
+
+<br/>
+
+::: incremental
+-   Assesses the conditions of political rights and civil liverties around the world
+
+-   Widely used by policy-makers and academia
+:::
+
+## Democracy in the World
+
+![](/Users/sergiobejar/sergiobejar/images/fh22.png){fig-align="center" height="600"}
+
+## 16 Years of Decline
+
+![](/Users/sergiobejar/sergiobejar/images/fh2.png){fig-align="center" height="600"}
+
+## What Percentage of People Live in Freedom?
+
+![](/Users/sergiobejar/sergiobejar/images/fh5.png){fig-align="center" height="600"}
+
+## COVID and Democracy
+
+![](/Users/sergiobejar/sergiobejar/images/fh7.png){fig-align="center" height="600"}
+
+## What Makes Democracies Stronger (or Weaker)?
+
+<br/>
+
+::: incremental
+Institutional Design:
+
+-   Unitarism vs. Federalism
+-   Separation of Powers
+-   Presidential vs. Parliamentary
+-   Majoritarian vs. Proportional Electoral Rules
+:::
+
+------------------------------------------------------------------------

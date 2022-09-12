@@ -1,0 +1,133 @@
+# Objectives
+
+- Define "state."
+- Compare state vs. government and state vs. nation.
+- Understand different explanations of state formation (i.e. How and why states are formed).
+- Compare different explanations of state formation.
+- Analyze consequences of state fragility. 
+
+# Definition
+
+## From the textbook:
+
+The state is a political-legal unit with sovereignty over a particular territory and the population that resides within its borders. 
+
+# Another definition
+
+## Charles Tilly: 
+
+Relative centralized, differentiated organizations the officials of which more or less successfully claim control over chief centralized means of violence within a population inhabiting a large, contiguous territory. 
+
+# Definitions of Nation and Government 
+
+## Nation
+Nation: a grouping of individuals who associate based on collectively held political identity.
+
+## Government 
+The organization that has the authority to act on behalf of the state and the right to make decisions that affect everyone in the state.
+
+
+
+# Success of the State Depends on:
+
+- **Legitimacy:** We accept that the state has the sovereign authority to use force.
+
+- **Sovereignty:** Ultimate responsibility for and legal authority over the conduct of internal affairs.
+
+- **Efficiency:** Ability of states to maintain effective order. 
+
+# Individual and Collective Choices Sometimes Clash
+
+Successful states efficiently solve a **Collective Action** problem.
+
+![](/Users/sergiobejar/sergiobejar/images/collective.jpg){fig-align="center" height="200"}
+
+# What heppens when problems of collective action are not solved?
+
+The state of nature is **ANARCHY.**
+
+![](/Users/sergiobejar/sergiobejar/images/anarchy.jpg){fig-align="center" height="200"}
+
+# Theories of State Formation 1: Social Contract
+
+- Proposed by Thomas Hobbes. 
+
+- Everyone limits their ability to do as they please in order to achieve some collective benefit.
+
+- The state and its institutions: guarantors of the social contract. 
+
+# Theories of State Formation 2: Predatory States
+
+- Proposed by Charles Tilly.
+
+- Rulers fight wars with external rivals. So, they need resources to do it. 
+
+- To get resources they do 2 things: (i) eliminate internal rivals, and (ii) create institutions that help them to administer and use those resources. Together, they result in "state-making" capacity.  
+
+# Functions of the State (Tilly)
+
+- **War making:** Eliminating or neutralizing their own rivals outside the territories in which they have clear and continuous priority as wielders of force. 
+
+- **State making:** Eliminating or neutralizing their rivals inside those territories. 
+
+- **Protection:** Eliminating or neutralizing the enemies of their clients 
+
+- **Extraction:** Acquiring the means of carrying out the first three activities.
+
+**"War made the state, and the state made war"** (Tilly)
+
+# Early State Formation
+
+## Military Context 
+- A vicious cycle: increase in warfare led to increase in military expenditures and  to an  increase in taxation extraction needs, best achieved from a larger territory.
+
+## Economic Context
+- Increase in agricultural productivity.
+- The growth of industry, trade and commerce, as well as cities.
+- The exploitation of overseas territories and empires.
+
+## Political Context 
+- Individual self interest replaces notions of predestination.
+- Protestant Reformation.
+- The Age of Enlightenment. 
+
+# Late State Formation 1
+
+## Military Context 
+- Post 1945: few interstate wars.
+- High incidence of civil wars.
+- Lack of military pressure = lack of incentive for the creation of a strong state.
+
+## Economic Context 
+- The legacy of European colonialism.
+- Lack of experience with independent economic development.
+
+## Political Context
+- Borders established arbitrarily.
+- Weak national identity.
+- Weak  connection between state and nation. 
+
+# Late State Formation 2 
+
+## The Natural Environment 
+- Difficult territories make the reach of the state more expensive and less efficient.
+
+&nbsp;
+
+![](/Users/sergiobejar/sergiobejar/images/africa.jpg){fig-align="center" height="200"}
+
+# Consequences of Late State Formation 1
+
+**Weak or failing states**
+
+ ![](/Users/sergiobejar/sergiobejar/images/fragil2022.jpg)
+
+# Increased likelihood of corruptin
+
+**Perception of Corruption Around the World, 2021**
+![](/Users/sergiobejar/sergiobejar/images/corruption2021.jpg)
+
+# Increased likelihood of Conflict 
+
+**Where are the conflicts in the world?**
+![](/Users/sergiobejar/sergiobejar/images/conflict.jpg)

@@ -1,0 +1,19 @@
+- title: "About"
+  href: "/about/"
+  active: about
+  
+- title: "Research"
+  href:  "/research/"
+  active: research
+  
+- title: "CV"
+  href: "/cv/"
+  active: cv
+  
+- title: "Teaching"
+  href: "/teaching/"
+  active: teaching
+  
+- title: "Media"
+  href: "/media/"
+  active: media
