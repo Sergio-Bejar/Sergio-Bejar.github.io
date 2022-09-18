@@ -12,7 +12,7 @@ This page is the directory of all the classes that I have thaught. Materials are
 
 #### Undergraduate Classes
 
-- [POLS 7)(POLS2/Democracy.html) Introduction to Comparative Politics
+- [POLS 2](POLS2/Democracy.html) Introduction to Comparative Politics
 - Latin American Politics
 - International Political Economy 
 - Research Methods
