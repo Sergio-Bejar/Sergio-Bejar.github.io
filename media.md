@@ -4,11 +4,11 @@ title: Media
 permalink: /media/
 ---
 
-{% include image.html url="/images/univision.jpg" caption="Univision, Bay Area, 2020." width=400 align="right" %}
+{% include image.html url="/images/univision.jpg" caption="Univision, Bay Area, 2020." width=500 align="center" %}
 
-Sharing my expertise with communities outside academia is importante. I am particularily interested in writing articles and providing TV commentary that engage Latinx communities in the political process. Here is a sample of selected Op-Eds and TV appearances. 
+Sharing my expertise with communities outside academia is important to me. I am particularily interested in writing articles and providing TV commentary that engage the [Latinx](https://en.wikipedia.org/wiki/Latinx) community in the political process. Here is a sample of selected Op-Eds and TV appearances. 
 
-## Op-Ed Work
+## Op-Ed Articles
 
 [As violence soars in Mexico, we need to do more to help](https://calo.org/2022/09/20/calo-commentary-as-violence-soars-in-mexico-we-need-to-do-more/). CALÓ News, September, 2022. 
 
