@@ -4,7 +4,7 @@ title: Media
 permalink: /media/
 ---
 
-{% include image.html url="/images/univision.jpg" caption="Univision, Bay Area, 2020." width=500 align="center" %}
+{% include image.html url="/images/univision.jpg" caption="Univision, Bay Area, 2020." width=400 align="center" %}
 
 Sharing my expertise with communities outside academia is important to me. I am particularily interested in writing articles and providing TV commentary that engage the [Latinx](https://en.wikipedia.org/wiki/Latinx) community in the political process. Here is a sample of selected Op-Eds and TV appearances. 
 
