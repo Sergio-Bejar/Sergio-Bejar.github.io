@@ -4,4 +4,4 @@ title: Media
 permalink: /media/
 ---
 
-Blogs and media appearances go here....
+{% include image.html url="/images/univision.jpg" caption="Univision, Bay Area, 2020." width=400 align="right" %}
