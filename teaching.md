@@ -15,7 +15,7 @@ This page is the directory of all the classes that I have thaught. Materials are
 - [POLS 2](POLS2/Democracy.html) Introduction to Comparative Politics
 - [Non-democracy](POLS2.github.io/presentations/nondemocracies.html)
 - Latin American Politics
-- International Political Economy / WWealth of Nations
+- International Political Economy / Wealth of Nations
 - Research Methods
 - Senior Seminar
 
