@@ -16,7 +16,7 @@ In addition, I have published a number of papers that analyze how International 
 ## Peer-Reviewed Publications
 
 
-Moraes, J.A., and **Sergio Béjar**. Forthcoming. ["Electoral Volatility and Political Polarization in Developing Democracies: Evidence from Latin America, 1993-2016."](https://journals.sagepub.com/doi/abs/10.1177/13540688221095098) *Party Politics*.
+Moraes, J.A., and **Sergio Béjar**. 2023. ["Electoral Volatility and Political Polarization in Developing Democracies: Evidence from Latin America, 1993-2016."](https://journals.sagepub.com/doi/abs/10.1177/13540688221095098) *Party Politics*.
 
 Bolte, B., Nicolás Schmidt, **Sergio Béjar**, Nguyen Huynh, and Bumba Mukherjee. 2021. ["`BayesSPsurv`: An R Package to Estimate Bayesian (Spatial) Split-Population Survival Models."](https://journal.r-project.org/dev/articles/RJ-2021-068/RJ-2021-068.pdf) *R Journal* 13(1): 595. 
 
