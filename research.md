@@ -9,7 +9,7 @@ active: research
 
 My current research agenda in comparative politics stems from an interest in understanding the micro-foundations of two different yet interwined political phenomena that endager the quality, stability and survival of democracy in Latin American democracies: political polarization and the electoral success of populist authoritarian political parties and politicians. I use a variety of methods to empirically test hypotheses related to the aforementioned phenomena including in-person and online survey experiments, develop survey tools and analyze geo-spatial and large panel data sets to better understand their aggregate and micro-level relationships. <br>
 <br>
-In addition, I have published a number of papers that analyze how International Financial Institutions (IFIs) interact with domestic political institutions to influence political outcomes -like protests- and economic policies -financial openess.-  I also enjoy witting code. To that end, I have co-authored a number of `R` and `Python` packages that are available in public repositories.  
+In addition, I have published a number of papers that analyze how International Financial Institutions (IFIs) interact with domestic political institutions to influence political outcomes -like protests- and economic policies -financial openess.-  I also enjoy witting code. To that end, I have co-authored a number of `R` and `Python` packages that are available in public repositories..  
 
 
 <br>
