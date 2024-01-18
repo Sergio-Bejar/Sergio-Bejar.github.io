@@ -8,14 +8,23 @@ This page is the directory of all the classes that I have thaught. Materials are
 
 ## Course Directory
 
+### Center for Research and Teaching in Economics (CIDE, Mexico)
+
+#### Graduate 
+
+- International Political Economy
+
+#### Undergraduate
+
+- Métodos Cuantitativos Aplicados II
+
 ### San José State University
 
 #### Undergraduate Classes
 
-- [POLS 2](POLS2/Democracy.html) Introduction to Comparative Politics
-- [Non-democracy](POLS2.github.io/presentations/nondemocracies.html)
+- Introduction to Comparative Politics
 - Latin American Politics
-- International Political Economy / Wealth of Nations
+- International Political Economy 
 - Research Methods
 - Senior Seminar
 
