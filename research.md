@@ -38,6 +38,10 @@ Mukherjee, Bumba, Vineete Yadav and **Sergio Béjar**. 2014 ["Candidate-Centered
 
 **Béjar, Sergio**, Bumba Mukherjee and Will H. Moore. 2011. ["Time Horizons Matter: Coalition Governments, Replacement Risk and the Size of Government."](https://doi.org/10.1007/s10101-011-0096-0) *Economics of Governance* 12(3): 201-235.  
 
+<br>
+## Book Chapters
+
+Moraes, J.A., and **Sergio Béjar**. 2024. "Latin America: Affective Polarization and Weak Partisan Institutions." *Handbook of Affective Polarization*, Edward Elgar, Eelco Harteveld and Mariano Torcal, eds.  
 
 <br>
 ## Software
