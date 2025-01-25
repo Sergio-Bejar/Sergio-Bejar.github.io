@@ -15,6 +15,10 @@ In addition, I have published a number of papers that analyze how International 
 <br>
 ## Peer-Reviewed Publications
 
+**Béjar, Sergio**. 2024. "Determinants of Affective Polarization in Mexico's 2018 Presidential Election," *Revista Latinoamericana de Opinión Pública* 13. 
+
+**Béjar, Sergio** and Bumba Mukherjee. 2024. ["Domestic Financial Intermediaries, Dictatorship, and Social Spending,"](https://link.springer.com/article/10.1007/s12116-024-09441-3)
+*Studies in Comparative International Development*. 
 
 Moraes, J.A., and **Sergio Béjar**. 2023. ["Electoral Volatility and Political Polarization in Developing Democracies: Evidence from Latin America, 1993-2016."](https://journals.sagepub.com/doi/abs/10.1177/13540688221095098) *Party Politics*.
 
@@ -41,7 +45,7 @@ Mukherjee, Bumba, Vineete Yadav and **Sergio Béjar**. 2014 ["Candidate-Centered
 <br>
 ## Book Chapters
 
-Moraes, J.A., and **Sergio Béjar**. 2024. "Latin America: Affective Polarization and Weak Partisan Institutions." *Handbook of Affective Polarization*, Edward Elgar, Eelco Harteveld and Mariano Torcal, eds.  
+Moraes, J.A., and **Sergio Béjar**. 2024. ["Latin America: Affective Polarization and Weak Partisan Institutions."](https://www.researchgate.net/profile/Juan-Moraes/publication/383523691_Affective_Polarization_and_Weak_Partisan_Institutions_in_Latin_America/links/66d0ad0abd201736675fa561/Affective-Polarization-and-Weak-Partisan-Institutions-in-Latin-America.pdf) *Handbook of Affective Polarization*, Edward Elgar, Eelco Harteveld and Mariano Torcal, eds.  
 
 <br>
 ## Software
