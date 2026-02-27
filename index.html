@@ -1,18 +1,1213 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sergio Béjar López — Political Scientist</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,800;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <style>
+        :root {
+            --cide: #163D34;
+            --cide-light: #1e5446;
+            --cide-dark: #0f2b25;
+            --cide-glow: rgba(22, 61, 52, 0.08);
+            --gold: #C8A435;
+            --gold-light: #e8c94a;
+            --gold-soft: #fdf6e0;
+            --copper: #B85C38;
+            --sand: #F5E6CA;
+            --white: #ffffff;
+            --off-white: #f9f8f5;
+            --ink: #1a1a1a;
+            --ink-light: #3a3a3a;
+            --ink-muted: #6d6d6d;
+            --border: #e2e0db;
+            --border-light: #eceae5;
+            --serif: 'Playfair Display', 'Georgia', serif;
+            --sans: 'DM Sans', 'Helvetica Neue', sans-serif;
+            --mono: 'JetBrains Mono', monospace;
+        }
 
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
 
+        body {
+            font-family: var(--sans);
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--ink);
+            background: var(--off-white);
+            -webkit-font-smoothing: antialiased;
+        }
 
-<div class="home">
-	
-	{% include image.html url="/images/bejar.jpg" caption="" width=250 align="right" %}
-	
-<h1>Welcome</h1>
-	
-	<p>I am a professor in the <a href="https://www.cide.edu/dep/">Department of Political Studies</a> at the <a href="https://www.cide.edu">Center for Research and Teaching in Economics (CIDE, Mexico)</a>. I was previously an associate professor in the <a href="https://www.sjsu.edu/polisci/">Department of Political Science</a> at <a href="https://www.sjsu.edu">San José State University.</a>, and an assistant professor of political science at <a href="https://www.wpunj.edu"> William Paterson University, NJ </a> and at the <a href="https://www.utrgv.edu"> University of Texas Rio Grande Valley. </a> I have also been a visiting research fellow at the <a href="https://www.cide.edu">Center for Research and Teaching in Economics (CIDE, México),</a> and at the <a href="https://stonecenter.tulane.edu/cipr">Center for Inter-American Policy and Research </a> at <a href= "https//tulane.edu">Tulane University.</a> Here, you will find information about my research, the classes that I teach, and my media contributions and appearances. 
+        /* ── Language toggle ── */
+        [lang="es"] .lang-en,
+        [lang="en"] .lang-es { display: none !important; }
 
-	<p>My current research uses surveys and experiments to understand: (i) what are the determinants and consequences of affective and programmatic polarization, and (ii) why people support left-wing authoritarian populist leaders in developing democracies, with an emphasis on Latin America. In addition, I use statistics to study the relationship between domestic political institutions and economic policies and outcomes. Therefore, my research and teaching interests lie at the intersecion of comparative politics, political economy, and political behavior. My research outputs have appeared in peer-reviewed journals like <em>Comparative Political Studies</em>, <em>R Journal</em>, <em>Party Politics</em>, <em>Journal of Elections, Public Opinion and Parties</em>, <em> Review of International Political Economy</em>, <em>International Political Science Review</em>, and <em>Economics of Governance</em>, to name a few.</p>
+        .lang-switch {
+            display: flex;
+            align-items: center;
+            gap: 0;
+            margin-left: 1rem;
+            border: 1px solid rgba(255,255,255,0.25);
+            border-radius: 3px;
+            overflow: hidden;
+        }
 
+        .lang-switch button {
+            font-family: var(--sans);
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            padding: 0.35rem 0.65rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s;
+            background: transparent;
+            color: rgba(255,255,255,0.5);
+        }
 
-</div>
+        .lang-switch button.active {
+            background: var(--gold);
+            color: var(--cide-dark);
+        }
+
+        .lang-switch button:hover:not(.active) {
+            color: #fff;
+            background: rgba(255,255,255,0.1);
+        }
+
+        /* ── Navigation ── */
+        .site-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: var(--cide);
+            border-bottom: 3px solid var(--gold);
+        }
+
+        .nav-inner {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 62px;
+        }
+
+        .nav-brand {
+            font-family: var(--serif);
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 0;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 0.25rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: rgba(255,255,255,0.75);
+            text-decoration: none;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            padding: 0.45rem 0.9rem;
+            border-radius: 3px;
+            transition: all 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #fff;
+            background: rgba(255,255,255,0.12);
+        }
+
+        .nav-toggle { display: none; cursor: pointer; background: none; border: none; padding: 8px; }
+        .nav-toggle span { display: block; width: 22px; height: 2px; background: #fff; margin: 5px 0; transition: all 0.3s; }
+
+        /* ── Hero ── */
+        .hero {
+            background: linear-gradient(135deg, var(--cide-dark) 0%, var(--cide) 50%, var(--cide-light) 100%);
+            padding: 130px 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(200, 164, 53, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, var(--gold), var(--copper), var(--gold));
+        }
+
+        .hero-inner {
+            max-width: 1140px;
+            margin: 0 auto;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 3rem;
+            align-items: end;
+            padding-bottom: 3.5rem;
+        }
+
+        .hero-photo-wrapper { position: relative; }
+
+        .hero-photo {
+            width: 100%;
+            aspect-ratio: 3/4;
+            object-fit: cover;
+            display: block;
+            border: 4px solid rgba(255,255,255,0.15);
+            filter: contrast(1.03);
+        }
+
+        .hero-photo-badge {
+            position: absolute;
+            bottom: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--gold);
+            color: var(--cide-dark);
+            font-size: 0.68rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 0.35rem 1.1rem;
+            white-space: nowrap;
+        }
+
+        .hero-content { padding-bottom: 0.5rem; }
+
+        .hero-name {
+            font-family: var(--serif);
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1.1;
+            color: #fff;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.6rem;
+        }
+
+        .hero-title {
+            font-size: 1.08rem;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 1.25rem;
+            line-height: 1.5;
+        }
+
+        .hero-title strong { color: var(--gold-light); font-weight: 600; }
+
+        .hero-bio {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.8;
+            margin-bottom: 1.75rem;
+            max-width: 620px;
+        }
+
+        .hero-bio em { color: rgba(255,255,255,0.85); font-style: italic; }
+
+        .hero-links {
+            display: flex;
+            gap: 0.6rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: #fff;
+            text-decoration: none;
+            padding: 0.45rem 1rem;
+            border: 1px solid rgba(255,255,255,0.25);
+            border-radius: 3px;
+            transition: all 0.2s;
+        }
+
+        .hero-link:hover {
+            background: rgba(255,255,255,0.15);
+            border-color: rgba(255,255,255,0.5);
+        }
+
+        .hero-link i, .hero-link .ai { font-size: 0.95rem; }
+
+        /* ── Section Base ── */
+        .section {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-family: var(--serif);
+            font-size: 1.9rem;
+            font-weight: 700;
+            color: var(--cide);
+        }
+
+        .section-line {
+            flex: 1;
+            height: 2px;
+            background: linear-gradient(90deg, var(--cide), transparent);
+            opacity: 0.2;
+        }
+
+        /* ── Bold colored bands ── */
+        .band-green {
+            background: var(--cide);
+            color: #fff;
+            padding: 4rem 2rem;
+        }
+
+        .band-green .section-title { color: #fff; }
+        .band-green .section-line { background: linear-gradient(90deg, var(--gold), transparent); opacity: 0.5; }
+
+        .band-sand {
+            background: var(--sand);
+            padding: 4rem 2rem;
+        }
+
+        .band-inner {
+            max-width: 1140px;
+            margin: 0 auto;
+        }
+
+        /* ── Research Interests ── */
+        .interests-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .interest-card {
+            padding: 2rem;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 4px;
+            transition: all 0.25s;
+        }
+
+        .interest-card:hover {
+            background: rgba(255,255,255,0.14);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+        }
+
+        .interest-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--gold);
+            color: var(--cide-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            border-radius: 3px;
+            margin-bottom: 1rem;
+        }
+
+        .interest-card h3 {
+            font-family: var(--serif);
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+
+        .interest-card p {
+            font-size: 0.875rem;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.65;
+        }
+
+        /* ── Publications ── */
+        .pub-list { list-style: none; }
+
+        .pub-item {
+            padding: 1.25rem 0;
+            border-bottom: 1px solid var(--border-light);
+            display: grid;
+            grid-template-columns: 56px 1fr;
+            gap: 1.25rem;
+            align-items: baseline;
+        }
+
+        .pub-item:last-child { border-bottom: none; }
+
+        .pub-year {
+            font-family: var(--mono);
+            font-size: 0.82rem;
+            color: var(--cide);
+            font-weight: 400;
+            background: var(--cide-glow);
+            padding: 0.2rem 0.5rem;
+            border-radius: 2px;
+            text-align: center;
+        }
+
+        .pub-details h4 {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--ink);
+            line-height: 1.55;
+            margin-bottom: 0.25rem;
+        }
+
+        .pub-details h4 a {
+            color: var(--cide);
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .pub-details h4 a:hover { color: var(--copper); text-decoration: underline; }
+
+        .pub-authors { font-size: 0.85rem; color: var(--ink-muted); }
+        .pub-authors strong { color: var(--ink); font-weight: 600; }
+
+        .pub-venue {
+            font-family: var(--serif);
+            font-size: 0.875rem;
+            font-style: italic;
+            color: var(--ink-light);
+        }
+
+        .pub-subsection {
+            font-family: var(--serif);
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--cide);
+            margin: 2.5rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--gold);
+            display: inline-block;
+        }
+
+        /* ── Software ── */
+        .software-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.25rem;
+        }
+
+        .software-card {
+            padding: 1.75rem;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-top: 4px solid var(--cide);
+            border-radius: 0 0 4px 4px;
+            transition: all 0.25s;
+        }
+
+        .software-card:hover {
+            box-shadow: 0 6px 24px rgba(22,61,52,0.1);
+            transform: translateY(-2px);
+        }
+
+        .software-name {
+            font-family: var(--mono);
+            font-size: 1.05rem;
+            color: var(--cide);
+            margin-bottom: 0.5rem;
+        }
+
+        .software-name a {
+            color: var(--cide);
+            text-decoration: none;
+            border-bottom: 1px dashed var(--cide);
+        }
+
+        .software-name a:hover { color: var(--copper); border-color: var(--copper); }
+
+        .software-card p { font-size: 0.875rem; color: var(--ink-muted); line-height: 1.6; }
+
+        .software-lang {
+            display: inline-block;
+            margin-top: 0.75rem;
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            padding: 0.25rem 0.65rem;
+            border-radius: 2px;
+        }
+
+        .lang-r { background: #e3f0e8; color: var(--cide); }
+        .lang-python { background: var(--gold-soft); color: #8a7020; }
+
+        /* ── Teaching ── */
+        .teaching-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .teaching-institution {
+            padding: 1.75rem;
+            background: var(--white);
+            border-radius: 4px;
+            border: 1px solid var(--border);
+        }
+
+        .teaching-institution.current {
+            background: var(--cide);
+            color: #fff;
+            border: none;
+        }
+
+        .teaching-inst-name {
+            font-family: var(--serif);
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.2rem;
+        }
+
+        .teaching-institution.current .teaching-inst-name { color: #fff; }
+
+        .teaching-inst-level {
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            margin-bottom: 0.85rem;
+        }
+
+        .teaching-institution.current .teaching-inst-level { color: var(--gold-light); }
+        .teaching-institution:not(.current) .teaching-inst-level { color: var(--ink-muted); }
+
+        .teaching-courses {
+            list-style: none;
+            font-size: 0.88rem;
+        }
+
+        .teaching-institution.current .teaching-courses { color: rgba(255,255,255,0.8); }
+        .teaching-institution:not(.current) .teaching-courses { color: var(--ink-light); }
+
+        .teaching-courses li {
+            padding: 0.3rem 0;
+            padding-left: 1.1rem;
+            position: relative;
+        }
+
+        .teaching-courses li::before {
+            content: '›';
+            position: absolute;
+            left: 0;
+            font-weight: 700;
+        }
+
+        .teaching-institution.current .teaching-courses li::before { color: var(--gold); }
+        .teaching-institution:not(.current) .teaching-courses li::before { color: var(--cide); }
+
+        /* ── Media ── */
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.5rem;
+        }
+
+        .media-category h3 {
+            font-family: var(--serif);
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--cide);
+        }
+
+        .media-item {
+            display: block;
+            padding: 1rem 1.25rem;
+            margin-bottom: 0.5rem;
+            background: var(--white);
+            border-left: 3px solid var(--gold);
+            text-decoration: none;
+            transition: all 0.2s;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .media-item:hover {
+            border-left-color: var(--cide);
+            background: var(--cide-glow);
+        }
+
+        .media-title {
+            font-size: 0.9rem;
+            color: var(--ink);
+            line-height: 1.5;
+            margin-bottom: 0.15rem;
+            transition: color 0.2s;
+        }
+
+        .media-item:hover .media-title { color: var(--cide); }
+
+        .media-outlet { font-size: 0.78rem; color: var(--ink-muted); font-style: italic; }
+
+        /* ── About ── */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 320px;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .about-text {
+            font-size: 0.965rem;
+            color: var(--ink-light);
+            line-height: 1.85;
+        }
+
+        .about-text a {
+            color: var(--cide);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        .about-text a:hover { border-bottom-color: var(--cide); }
+
+        .about-photo {
+            width: 100%;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        .about-caption {
+            font-size: 0.78rem;
+            color: var(--ink-muted);
+            font-style: italic;
+            margin-top: 0.6rem;
+            line-height: 1.5;
+        }
+
+        /* ── Footer ── */
+        .site-footer {
+            background: var(--cide-dark);
+            color: rgba(255,255,255,0.7);
+            padding: 3.5rem 2rem 2rem;
+        }
+
+        .footer-inner {
+            max-width: 1140px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.3fr 1fr 1fr;
+            gap: 2.5rem;
+        }
+
+        .footer-col h4 {
+            font-family: var(--serif);
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--gold-light);
+            margin-bottom: 1rem;
+        }
+
+        .footer-col p, .footer-col a {
+            font-size: 0.875rem;
+            color: rgba(255,255,255,0.55);
+            line-height: 1.7;
+        }
+
+        .footer-col a {
+            text-decoration: none;
+            display: block;
+            padding: 0.25rem 0;
+            transition: color 0.2s;
+        }
+
+        .footer-col a:hover { color: #fff; }
+        .footer-col a i, .footer-col a .ai { width: 20px; display: inline-block; margin-right: 0.4rem; }
+
+        .footer-bottom {
+            max-width: 1140px;
+            margin: 2rem auto 0;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.3);
+        }
+
+        .footer-cide {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            color: rgba(255,255,255,0.3);
+            text-decoration: none;
+        }
+
+        /* ── Animations ── */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+        /* ── Responsive ── */
+        @media (max-width: 768px) {
+            .hero { padding: 100px 1.5rem 0; }
+            .hero-grid { grid-template-columns: 1fr; gap: 2rem; padding-bottom: 2.5rem; }
+            .hero-photo-wrapper { max-width: 180px; }
+            .hero-name { font-size: 2.2rem; }
+            .interests-grid { grid-template-columns: 1fr; }
+            .software-grid { grid-template-columns: 1fr; }
+            .pub-item { grid-template-columns: 1fr; gap: 0.25rem; }
+            .teaching-grid { grid-template-columns: 1fr; }
+            .media-grid { grid-template-columns: 1fr; }
+            .about-content { grid-template-columns: 1fr; }
+            .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+            .nav-links { display: none; }
+            .nav-links.active {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 62px;
+                left: 0;
+                right: 0;
+                background: var(--cide);
+                padding: 1rem 2rem 1.5rem;
+                border-bottom: 3px solid var(--gold);
+                gap: 0.25rem;
+            }
+            .nav-toggle { display: block; }
+            .lang-switch { margin-left: 0.5rem; }
+        }
+
+        @media (max-width: 480px) {
+            .hero-name { font-size: 1.8rem; }
+            .section-title { font-size: 1.5rem; }
+            .hero-links { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="site-nav">
+        <div class="nav-inner">
+            <a href="#" class="nav-brand">Sergio Béjar López</a>
+            <button class="nav-toggle" id="navToggle" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+            <div class="nav-right">
+                <ul class="nav-links" id="navLinks">
+                    <li>
+                        <a href="#research" class="lang-en">Research</a>
+                        <a href="#research" class="lang-es">Investigación</a>
+                    </li>
+                    <li>
+                        <a href="#publications" class="lang-en">Publications</a>
+                        <a href="#publications" class="lang-es">Publicaciones</a>
+                    </li>
+                    <li>
+                        <a href="#teaching" class="lang-en">Teaching</a>
+                        <a href="#teaching" class="lang-es">Docencia</a>
+                    </li>
+                    <li>
+                        <a href="#media" class="lang-en">Media</a>
+                        <a href="#media" class="lang-es">Medios</a>
+                    </li>
+                    <li>
+                        <a href="#about" class="lang-en">About</a>
+                        <a href="#about" class="lang-es">Acerca de</a>
+                    </li>
+                </ul>
+                <div class="lang-switch">
+                    <button id="btnEN" class="active" onclick="setLang('en')">EN</button>
+                    <button id="btnES" onclick="setLang('es')">ES</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-inner">
+            <div class="hero-grid">
+                <div class="hero-photo-wrapper fade-up">
+                    <img src="https://raw.githubusercontent.com/Sergio-Bejar/Sergio-Bejar.github.io/main/images/bejar.jpg" alt="Sergio Béjar López" class="hero-photo">
+                    <div class="hero-photo-badge">CIDE · DEP</div>
+                </div>
+                <div class="hero-content fade-up" style="transition-delay: 0.1s;">
+                    <h1 class="hero-name">Sergio Béjar López</h1>
+
+                    <!-- EN -->
+                    <p class="hero-title lang-en">
+                        Professor &amp; <strong>Director, Division of Political Studies</strong><br>
+                        Centro de Investigación y Docencia Económicas (CIDE)
+                    </p>
+                    <p class="hero-bio lang-en">
+                        My research uses surveys, experiments, and quantitative methods to understand political polarization, populist authoritarianism, and the interplay between domestic institutions and economic outcomes — with an emphasis on Latin America. My work appears in <em>Comparative Political Studies</em>, <em>Party Politics</em>, <em>Review of International Political Economy</em>, and other leading journals.
+                    </p>
+
+                    <!-- ES -->
+                    <p class="hero-title lang-es">
+                        Profesor &amp; <strong>Director de la División de Estudios Políticos</strong><br>
+                        Centro de Investigación y Docencia Económicas (CIDE)
+                    </p>
+                    <p class="hero-bio lang-es">
+                        Mi investigación utiliza encuestas, experimentos y métodos cuantitativos para comprender la polarización política, el populismo autoritario y la relación entre instituciones nacionales y resultados económicos, con énfasis en América Latina. Mi trabajo ha sido publicado en <em>Comparative Political Studies</em>, <em>Party Politics</em>, <em>Review of International Political Economy</em>, entre otras revistas.
+                    </p>
+
+                    <div class="hero-links">
+                        <a href="mailto:sergio.bejar@cide.edu" class="hero-link"><i class="fas fa-envelope"></i> Email</a>
+                        <a href="https://scholar.google.com/citations?user=J_B1PJAAAAAJ" class="hero-link"><i class="ai ai-google-scholar"></i> Scholar</a>
+                        <a href="https://github.com/Sergio-Bejar" class="hero-link"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://orcid.org/0000-0002-9352-3892" class="hero-link"><i class="ai ai-orcid"></i> ORCID</a>
+                        <a href="https://twitter.com/Prof_Bejar" class="hero-link"><i class="fab fa-x-twitter"></i> X</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research — GREEN BAND -->
+    <section class="band-green" id="research">
+        <div class="band-inner">
+            <div class="section-header fade-up">
+                <h2 class="section-title lang-en">Research</h2>
+                <h2 class="section-title lang-es">Investigación</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="interests-grid">
+                <div class="interest-card fade-up">
+                    <div class="interest-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3 class="lang-en">Political Polarization</h3>
+                    <h3 class="lang-es">Polarización Política</h3>
+                    <p class="lang-en">Investigating the determinants and consequences of affective and programmatic polarization in developing democracies through surveys and experiments.</p>
+                    <p class="lang-es">Investigación sobre los determinantes y consecuencias de la polarización afectiva y programática en democracias en desarrollo mediante encuestas y experimentos.</p>
+                </div>
+                <div class="interest-card fade-up" style="transition-delay: 0.1s;">
+                    <div class="interest-icon"><i class="fas fa-landmark"></i></div>
+                    <h3 class="lang-en">Populism &amp; Authoritarianism</h3>
+                    <h3 class="lang-es">Populismo y Autoritarismo</h3>
+                    <p class="lang-en">Understanding why citizens support left-wing authoritarian populist leaders in Latin America and the implications for democratic quality and survival.</p>
+                    <p class="lang-es">Comprender por qué los ciudadanos apoyan a líderes populistas autoritarios de izquierda en América Latina y las implicaciones para la calidad y supervivencia democrática.</p>
+                </div>
+                <div class="interest-card fade-up" style="transition-delay: 0.2s;">
+                    <div class="interest-icon"><i class="fas fa-university"></i></div>
+                    <h3 class="lang-en">Political Economy</h3>
+                    <h3 class="lang-es">Economía Política</h3>
+                    <p class="lang-en">Analyzing how domestic political institutions interact with international financial organizations to shape economic policies and outcomes.</p>
+                    <p class="lang-es">Análisis de cómo las instituciones políticas nacionales interactúan con organismos financieros internacionales para influir en políticas y resultados económicos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications -->
+    <section class="section" id="publications">
+        <div class="section-header fade-up">
+            <h2 class="section-title lang-en">Publications</h2>
+            <h2 class="section-title lang-es">Publicaciones</h2>
+            <div class="section-line"></div>
+        </div>
+
+        <div class="pub-subsection fade-up lang-en">Peer-Reviewed Articles</div>
+        <div class="pub-subsection fade-up lang-es">Artículos Arbitrados</div>
+
+        <ul class="pub-list">
+            <li class="pub-item fade-up">
+                <span class="pub-year">2024</span>
+                <div class="pub-details">
+                    <h4>"Determinants of Affective Polarization in Mexico's 2018 Presidential Election"</h4>
+                    <div class="pub-authors"><strong>Béjar, Sergio</strong></div>
+                    <div class="pub-venue">Revista Latinoamericana de Opinión Pública 13</div>
+                </div>
+            </li>
+            <li class="pub-item fade-up">
+                <span class="pub-year">2024</span>
+                <div class="pub-details">
+                    <h4><a href="https://link.springer.com/article/10.1007/s12116-024-09441-3">"Domestic Financial Intermediaries, Dictatorship, and Social Spending"</a></h4>
+                    <div class="pub-authors"><strong>Béjar, Sergio</strong> and Bumba Mukherjee</div>
+                    <div class="pub-venue">Studies in Comparative International Development</div>
+                </div>
+            </li>
+            <li class="pub-item fade-up">
+                <span class="pub-year">2023</span>
+                <div class="pub-details">
+                    <h4><a href="https://journals.sagepub.com/doi/abs/10.1177/13540688221095098">"Electoral Volatility and Political Polarization in Developing Democracies: Evidence from Latin America, 1993–2016"</a></h4>
+                    <div class="pub-authors">Moraes, J.A. and <strong>Sergio Béjar</strong></div>
+                    <div class="pub-venue">Party Politics</div>
+                </div>
+            </li>
+            <li class="pub-item fade-up">
+                <span class="pub-year">2021</span>
+                <div class="pub-details">
+                    <h4><a href="https://journal.r-project.org/dev/articles/RJ-2021-068/RJ-2021-068.pdf">"BayesSPsurv: An R Package to Estimate Bayesian (Spatial) Split-Population Survival Models"</a></h4>
+                    <div class="pub-authors">Bolte, B., Nicolás Schmidt, <strong>Sergio Béjar</strong>, Nguyen Huynh, and Bumba Mukherjee</div>
+                    <div class="pub-venue">R Journal 13(1): 595</div>
+                </div>
+            </li>
+            <li class="pub-item fade-up">
+                <span class="pub-year">2021</span>
+                <div class="pub-details">
+                    <h4><a href="https://joss.theoj.org/papers/10.21105/joss.03322.pdf">"IDCeMPy: Python Package for Inflated Discrete Choice Models"</a></h4>
+                    <div class="pub-authors">Huynh, Nguyen, <strong>Sergio Béjar</strong>, Vineeta Yadav, and Bumba Mukherjee</div>
+                    <div class="pub-venue">Journal of Open Source Software 6(63): 3322</div>
+                </div>
+            </li>
+            <li class="pub-item fade-up">
+                <span class="pub-year">2020</span>
+                <div class="pub-details">
+                    <h4><a href="https://joss.theoj.org/papers/10.21105/joss.02164.pdf">"BayesMFSurv: An R Package to Estimate Bayesian Split-Population Survival Models With (and Without) Misclassified Failure Events"</a></h4>
+                    <div class="pub-authors">Joo, M., Nicolás Schmidt, <strong>Sergio Béjar</strong>, Vineeta Yadav, and Bumba Mukherjee</div>
+                    <div class="pub-venue">Journal of Open Source Software 5(48): 2164</div>
+                </div>
+            </li>
+            <li class="pub-item fade-up">
+                <span class="pub-year">2020</span>
+                <div class="pub-details">
+                    <h4><a href="https://doi.org/10.1080/17457289.2018.1545775">"Elite Polarization and Voting Turnout in Latin America, 1993–2010"</a></h4>
+                    <div class="pub-authors"><strong>Béjar, Sergio</strong>, Santiago López-Cariboni, and J.A. Moraes</div>
+                    <div class="pub-venue">Journal of Elections, Public Opinion and Parties 30(1): 1–21</div>
+                </div>
+            </li>
+            <li class="pub-item fade-up">
+                <span class="pub-year">2016</span>
+                <div class="pub-details">
+                    <h4><a href="https://doi.org/10.1111/j.1548-2456.2016.00309.x">"The IMF, Party System Institutionalization and Protest in Latin America"</a></h4>
+                    <div class="pub-authors"><strong>Béjar, Sergio</strong> and J.A. Moraes</div>
+                    <div class="pub-venue">Latin American Politics and Society 58(2): 26–48</div>
+                </div>
+            </li>
+            <li class="pub-item fade-up">
+                <span class="pub-year">2014</span>
+                <div class="pub-details">
+                    <h4><a href="https://doi.org/10.1177/0010414013488551">"Electoral Particularism, Bank Concentration and Capital Account Liberalization in Developing Democracies"</a></h4>
+                    <div class="pub-authors">Mukherjee, Bumba, Vineeta Yadav, and <strong>Sergio Béjar</strong></div>
+                    <div class="pub-venue">Comparative Political Studies 47(6): 851–77</div>
+                </div>
+            </li>
+            <li class="pub-item fade-up">
+                <span class="pub-year">2014</span>
+                <div class="pub-details">
+                    <h4><a href="https://doi.org/10.1080/09692290.2013.822410">"Candidate-Centered Systems, Public Banks and Equity Market Restrictions in Developing Countries"</a></h4>
+                    <div class="pub-authors">Mukherjee, Bumba, Vineeta Yadav, and <strong>Sergio Béjar</strong></div>
+                    <div class="pub-venue">Review of International Political Economy 21(3): 670–709</div>
+                </div>
+            </li>
+            <li class="pub-item fade-up">
+                <span class="pub-year">2013</span>
+                <div class="pub-details">
+                    <h4><a href="https://doi.org/10.1177/0738894213499677">"IMF-sponsored Economic Programs and Contentious Collective Action in Latin America, 1980–2007"</a></h4>
+                    <div class="pub-authors"><strong>Béjar, Sergio</strong> and David Ortiz</div>
+                    <div class="pub-venue">Conflict Management and Peace Science 30(5): 492–515</div>
+                </div>
+            </li>
+            <li class="pub-item fade-up">
+                <span class="pub-year">2011</span>
+                <div class="pub-details">
+                    <h4><a href="https://doi.org/10.1177/0192512110385299">"Electoral Institutions and Growth Volatility: Theory and Evidence"</a></h4>
+                    <div class="pub-authors"><strong>Béjar, Sergio</strong> and Bumba Mukherjee</div>
+                    <div class="pub-venue">International Political Science Review 32(4): 458–479</div>
+                </div>
+            </li>
+            <li class="pub-item fade-up">
+                <span class="pub-year">2011</span>
+                <div class="pub-details">
+                    <h4><a href="https://doi.org/10.1007/s10101-011-0096-0">"Time Horizons Matter: Coalition Governments, Replacement Risk and the Size of Government"</a></h4>
+                    <div class="pub-authors"><strong>Béjar, Sergio</strong>, Bumba Mukherjee, and Will H. Moore</div>
+                    <div class="pub-venue">Economics of Governance 12(3): 201–235</div>
+                </div>
+            </li>
+        </ul>
+
+        <div class="pub-subsection fade-up lang-en">Book Chapters</div>
+        <div class="pub-subsection fade-up lang-es">Capítulos de Libro</div>
+
+        <ul class="pub-list">
+            <li class="pub-item fade-up">
+                <span class="pub-year">2024</span>
+                <div class="pub-details">
+                    <h4><a href="https://www.researchgate.net/profile/Juan-Moraes/publication/383523691">"Latin America: Affective Polarization and Weak Partisan Institutions"</a></h4>
+                    <div class="pub-authors">Moraes, J.A. and <strong>Sergio Béjar</strong></div>
+                    <div class="pub-venue">Handbook of Affective Polarization, Edward Elgar (Harteveld &amp; Torcal, eds.)</div>
+                </div>
+            </li>
+        </ul>
+
+        <div class="pub-subsection fade-up">Software</div>
+
+        <div class="software-grid">
+            <div class="software-card fade-up">
+                <div class="software-name"><a href="https://github.com/Nicolas-Schmidt/BayesSPsurv">BayesSPsurv</a></div>
+                <p class="lang-en">Bayesian spatial split-population survival models for clustered event processes.</p>
+                <p class="lang-es">Modelos bayesianos espaciales de supervivencia con población dividida para procesos de eventos agrupados.</p>
+                <span class="software-lang lang-r">R · CRAN</span>
+            </div>
+            <div class="software-card fade-up" style="transition-delay: 0.1s;">
+                <div class="software-name"><a href="https://github.com/Nicolas-Schmidt/BayesMFSurv">BayesMFSurv</a></div>
+                <p class="lang-en">Bayesian split-population survival models with and without misclassified failure events.</p>
+                <p class="lang-es">Modelos bayesianos de supervivencia con población dividida con y sin eventos de fallo mal clasificados.</p>
+                <span class="software-lang lang-r">R · CRAN</span>
+            </div>
+            <div class="software-card fade-up" style="transition-delay: 0.2s;">
+                <div class="software-name"><a href="https://pypi.org/project/idcempy/">IDCeMPy</a></div>
+                <p class="lang-en">Inflated Discrete Choice Models including ZIOP/C, MIOP/C, and GIMNL estimators.</p>
+                <p class="lang-es">Modelos de Elección Discreta Inflados incluyendo estimadores ZIOP/C, MIOP/C y GIMNL.</p>
+                <span class="software-lang lang-python">Python · PyPI</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Teaching — SAND BAND -->
+    <section class="band-sand" id="teaching">
+        <div class="band-inner">
+            <div class="section-header fade-up">
+                <h2 class="section-title lang-en">Teaching</h2>
+                <h2 class="section-title lang-es">Docencia</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="teaching-grid">
+                <div class="teaching-institution current fade-up">
+                    <div class="teaching-inst-name">CIDE, México</div>
+                    <div class="teaching-inst-level lang-en">Current · Graduate &amp; Undergraduate</div>
+                    <div class="teaching-inst-level lang-es">Actual · Posgrado y Licenciatura</div>
+                    <ul class="teaching-courses">
+                        <li class="lang-en">International Political Economy (Graduate)</li>
+                        <li class="lang-en">Métodos Cuantitativos Aplicados II (Undergraduate)</li>
+                        <li class="lang-es">Economía Política Internacional (Posgrado)</li>
+                        <li class="lang-es">Métodos Cuantitativos Aplicados II (Licenciatura)</li>
+                    </ul>
+                </div>
+                <div class="teaching-institution fade-up" style="transition-delay: 0.1s;">
+                    <div class="teaching-inst-name">San José State University</div>
+                    <div class="teaching-inst-level lang-en">Undergraduate</div>
+                    <div class="teaching-inst-level lang-es">Licenciatura</div>
+                    <ul class="teaching-courses">
+                        <li>Introduction to Comparative Politics</li>
+                        <li>Latin American Politics</li>
+                        <li>International Political Economy</li>
+                        <li>Research Methods</li>
+                        <li>Senior Seminar</li>
+                    </ul>
+                </div>
+                <div class="teaching-institution fade-up">
+                    <div class="teaching-inst-name">William Paterson University</div>
+                    <div class="teaching-inst-level lang-en">Graduate &amp; Undergraduate</div>
+                    <div class="teaching-inst-level lang-es">Posgrado y Licenciatura</div>
+                    <ul class="teaching-courses">
+                        <li>Research Methods I &amp; II (Graduate)</li>
+                        <li>Introduction to Politics</li>
+                        <li>Latin American Politics</li>
+                        <li>Latin American Political Economy</li>
+                    </ul>
+                </div>
+                <div class="teaching-institution fade-up" style="transition-delay: 0.1s;">
+                    <div class="teaching-inst-name">UT Rio Grande Valley · Notre Dame · Florida State</div>
+                    <div class="teaching-inst-level lang-en">Undergraduate</div>
+                    <div class="teaching-inst-level lang-es">Licenciatura</div>
+                    <ul class="teaching-courses">
+                        <li>Comparative Politics of Developing Nations</li>
+                        <li>Mexican Politics &amp; South American Politics</li>
+                        <li>Political Economy of Development</li>
+                        <li>Introduction to Comparative Politics</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Media -->
+    <section class="section" id="media">
+        <div class="section-header fade-up">
+            <h2 class="section-title lang-en">Media</h2>
+            <h2 class="section-title lang-es">Medios</h2>
+            <div class="section-line"></div>
+        </div>
+        <p class="fade-up lang-en" style="color: var(--ink-light); margin-bottom: 2rem; max-width: 680px;">
+            Sharing expertise with communities outside academia is important to me. I'm particularly committed to engaging the Latino community in the political process through commentary and public writing.
+        </p>
+        <p class="fade-up lang-es" style="color: var(--ink-light); margin-bottom: 2rem; max-width: 680px;">
+            Compartir mi experiencia con comunidades fuera de la academia es importante para mí. Estoy particularmente comprometido con involucrar a la comunidad latina en el proceso político a través de comentarios y escritura pública.
+        </p>
+        <div class="media-grid">
+            <div class="media-category fade-up">
+                <h3 class="lang-en">Op-Ed Articles</h3>
+                <h3 class="lang-es">Artículos de Opinión</h3>
+                <a href="https://calo.org/2022/09/20/calo-commentary-as-violence-soars-in-mexico-we-need-to-do-more/" class="media-item">
+                    <div class="media-title">As violence soars in Mexico, we need to do more to help</div>
+                    <div class="media-outlet">CALÓ News · September 2022</div>
+                </a>
+            </div>
+            <div class="media-category fade-up" style="transition-delay: 0.1s;">
+                <h3 class="lang-en">TV Interviews</h3>
+                <h3 class="lang-es">Entrevistas de TV</h3>
+                <a href="https://www.univision.com/local/los-angeles-kmex/elecciones-estados-unidos-2020/por-que-los-hispanos-deben-apoyar-el-movimiento-black-lives-matter-video" class="media-item">
+                    <div class="media-title">¿Por qué los hispanos deben apoyar el movimiento Black Lives Matter?</div>
+                    <div class="media-outlet">Univision, Los Angeles</div>
+                </a>
+                <a href="https://www.univision.com/shows/noticiero-univision/trump-anuncia-que-se-suspenden-los-viajes-de-europa-a-eeuu-ante-la-alerta-por-el-coronavirus-video" class="media-item">
+                    <div class="media-title">Trump anuncia que se suspenden los viajes de Europa a EEUU</div>
+                    <div class="media-outlet">Univision, National Network</div>
+                </a>
+                <a href="https://www.univision.com/shows/noticiero-univision/que-tan-efectiva-puede-ser-una-convencion-virtual-asi-sera-el-evento-que-lanzara-la-candidatura-de-biden-y-harris-video" class="media-item">
+                    <div class="media-title">¿Qué tan efectiva puede ser una convención virtual?</div>
+                    <div class="media-outlet">Univision, National Network</div>
+                </a>
+                <a href="https://www.univision.com/local/san-francisco-kdtv/expertos-explican-como-impacta-la-participacion-de-california-por-primera-vez-en-un-supermartes-video" class="media-item">
+                    <div class="media-title">Análisis de elecciones — Super Tuesday</div>
+                    <div class="media-outlet">Univision, Bay Area</div>
+                </a>
+                <a href="https://www.telemundoareadelabahia.com/videos/elecciones-primarias-en-nueva-york_tlmd-area-de-la-bahia/1941277/" class="media-item">
+                    <div class="media-title">#YoDecido — Primarias en Nueva York</div>
+                    <div class="media-outlet">Telemundo, Bay Area</div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="section" id="about" style="border-top: 1px solid var(--border-light);">
+        <div class="section-header fade-up">
+            <h2 class="section-title lang-en">About</h2>
+            <h2 class="section-title lang-es">Acerca de Mí</h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="about-content">
+            <div class="about-text fade-up">
+                <!-- EN -->
+                <div class="lang-en">
+                    <p>Originally from Mexico and a first-generation college student, I obtained my Ph.D. from the <a href="https://politicalscience.nd.edu">Department of Political Science</a> at the <a href="https://www.nd.edu">University of Notre Dame</a> in 2011. I did my BA in Economics at <a href="https://tec.mx/en">Tec de Monterrey</a> and an MA in Economics at the <a href="https://www.econ.pitt.edu/">University of Pittsburgh</a>, where I became a <a href="https://www.steelers.com/">Steelers</a> fan.</p>
+                    <br>
+                    <p>Before joining CIDE, I was an associate professor at <a href="https://www.sjsu.edu">San José State University</a>, and held positions at <a href="https://www.wpunj.edu">William Paterson University</a> and the <a href="https://www.utrgv.edu">University of Texas Rio Grande Valley</a>. I have also been a visiting research fellow at CIDE and at the <a href="https://stonecenter.tulane.edu/cipr">Center for Inter-American Policy and Research</a> at Tulane University.</p>
+                    <br>
+                    <p>Outside academia, I have two big passions: running and traveling. As a long-distance runner I've competed in the <a href="https://www.bmw-berlin-marathon.com/en/">Berlin Marathon</a>, the <a href="https://www.nyrr.org/tcsnycmarathon">NYC Marathon</a>, the <a href="https://www.chicagomarathon.com">Chicago Marathon</a>, and the <a href="https://www.baa.org">Boston Marathon</a>. I've visited 27 countries and counting.</p>
+                </div>
+                <!-- ES -->
+                <div class="lang-es">
+                    <p>Originario de México y estudiante universitario de primera generación, obtuve mi doctorado en el <a href="https://politicalscience.nd.edu">Departamento de Ciencia Política</a> de la <a href="https://www.nd.edu">Universidad de Notre Dame</a> en 2011. Estudié la licenciatura en Economía en el <a href="https://tec.mx/es">Tec de Monterrey</a> y una maestría en Economía en la <a href="https://www.econ.pitt.edu/">Universidad de Pittsburgh</a>, donde me hice fan de los <a href="https://www.steelers.com/">Steelers</a>.</p>
+                    <br>
+                    <p>Antes de incorporarme al CIDE, fui profesor asociado en la <a href="https://www.sjsu.edu">San José State University</a>, y ocupé puestos en <a href="https://www.wpunj.edu">William Paterson University</a> y la <a href="https://www.utrgv.edu">University of Texas Rio Grande Valley</a>. También fui investigador visitante en el CIDE y en el <a href="https://stonecenter.tulane.edu/cipr">Center for Inter-American Policy and Research</a> de la Universidad de Tulane.</p>
+                    <br>
+                    <p>Fuera de la academia, tengo dos grandes pasiones: correr y viajar. Como corredor de larga distancia he competido en el <a href="https://www.bmw-berlin-marathon.com/en/">Maratón de Berlín</a>, el <a href="https://www.nyrr.org/tcsnycmarathon">Maratón de Nueva York</a>, el <a href="https://www.chicagomarathon.com">Maratón de Chicago</a> y el <a href="https://www.baa.org">Maratón de Boston</a>. He visitado 27 países y contando.</p>
+                </div>
+            </div>
+            <div class="fade-up" style="transition-delay: 0.15s;">
+                <img src="https://raw.githubusercontent.com/Sergio-Bejar/Sergio-Bejar.github.io/main/images/moritz.jpg" alt="Sils im Engadin, Switzerland" class="about-photo">
+                <p class="about-caption lang-en">Sils im Engadin, Switzerland — near St. Moritz, a high-altitude training paradise.</p>
+                <p class="about-caption lang-es">Sils im Engadin, Suiza — cerca de St. Moritz, un paraíso de entrenamiento en altitud.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-col">
+                <h4>Sergio Béjar López</h4>
+                <p>
+                    Profesor Investigador Titular<br>
+                    Departamento de Estudios Políticos<br>
+                    Centro de Investigación y Docencia Económicas<br>
+                    Carretera México-Toluca 3655<br>
+                    Col. Lomas de Santa Fe, CDMX 01210
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4 class="lang-en">Contact</h4>
+                <h4 class="lang-es">Contacto</h4>
+                <a href="mailto:sergio.bejar@cide.edu"><i class="fas fa-envelope"></i> sergio.bejar@cide.edu</a>
+                <a href="https://www.cide.edu/dep/"><i class="fas fa-building"></i> CIDE — Estudios Políticos</a>
+            </div>
+            <div class="footer-col">
+                <h4 class="lang-en">Profiles</h4>
+                <h4 class="lang-es">Perfiles</h4>
+                <a href="https://scholar.google.com/citations?user=J_B1PJAAAAAJ"><i class="ai ai-google-scholar"></i> Google Scholar</a>
+                <a href="https://github.com/Sergio-Bejar"><i class="fab fa-github"></i> GitHub</a>
+                <a href="https://orcid.org/0000-0002-9352-3892"><i class="ai ai-orcid"></i> ORCID</a>
+                <a href="https://twitter.com/Prof_Bejar"><i class="fab fa-x-twitter"></i> X / Twitter</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy; 2026 Sergio Béjar López</span>
+            <a href="https://www.cide.edu" class="footer-cide">
+                <i class="fas fa-graduation-cap"></i> CIDE
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        // Language switcher
+        function setLang(lang) {
+            document.documentElement.lang = lang;
+            document.getElementById('btnEN').classList.toggle('active', lang === 'en');
+            document.getElementById('btnES').classList.toggle('active', lang === 'es');
+            // Update page title
+            document.title = lang === 'es'
+                ? 'Sergio Béjar López — Politólogo'
+                : 'Sergio Béjar López — Political Scientist';
+        }
+
+        // Scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+        document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+        // Mobile nav
+        document.getElementById('navToggle').addEventListener('click', () => {
+            document.getElementById('navLinks').classList.toggle('active');
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navLinks').classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
