@@ -707,7 +707,7 @@
             .hero-grid { grid-template-columns: 1fr; gap: 2rem; padding-bottom: 2.5rem; }
             .hero-photo-wrapper { max-width: 180px; }
             .hero-name { font-size: 2.2rem; }
-            .interests-grid { grid-template-columns: 1fr; }
+            .interests-grid { grid-template-columns: 1fr !important; }
             .software-grid { grid-template-columns: 1fr; }
             .pub-item { grid-template-columns: 1fr; gap: 0.25rem; }
             .teaching-grid { grid-template-columns: 1fr; }
@@ -762,6 +762,10 @@
                         <a href="#publications" class="lang-es">Publicaciones</a>
                     </li>
                     <li>
+                        <a href="#software" class="lang-en">Software</a>
+                        <a href="#software" class="lang-es">Software</a>
+                    </li>
+                    <li>
                         <a href="#teaching" class="lang-en">Teaching</a>
                         <a href="#teaching" class="lang-es">Docencia</a>
                     </li>
@@ -795,20 +799,20 @@
 
                     <!-- EN -->
                     <p class="hero-title lang-en">
-                        Professor &amp; <strong>Director, Division of Political Studies</strong><br>
-                        Centro de Investigación y Docencia Económicas (CIDE)
+                        <strong>Comparative Political Scientist</strong> studying democratic accountability, political behavior, and political economy.<br>
+                        Professor &amp; Director, Division of Political Studies · CIDE
                     </p>
                     <p class="hero-bio lang-en">
-                        <em>How does political competition shape democratic accountability, citizen behavior, and the quality of democratic governance?</em> My research combines comparative political economy with advances in survey methodology and large-scale electoral data to answer this question. I develop statistical software, design survey experiments, and analyze subnational political dynamics across Latin America. My work appears in <em>Comparative Political Studies</em>, <em>Party Politics</em>, <em>Review of International Political Economy</em>, <em>The R Journal</em>, and other leading outlets.
+                        <em>How does political competition shape democratic accountability, citizen behavior, and the political economy of democratic governance?</em> I answer this question by combining comparative politics, political economy, survey methodology, and Bayesian statistics — a rare combination that allows me to both develop new measurement tools and test substantive theories of democratic politics across Latin America.
                     </p>
 
                     <!-- ES -->
                     <p class="hero-title lang-es">
-                        Profesor &amp; <strong>Director de la División de Estudios Políticos</strong><br>
-                        Centro de Investigación y Docencia Económicas (CIDE)
+                        <strong>Politólogo Comparativista</strong> especializado en rendición de cuentas democrática, comportamiento político y economía política.<br>
+                        Profesor y Director, División de Estudios Políticos · CIDE
                     </p>
                     <p class="hero-bio lang-es">
-                        <em>¿Cómo moldea la competencia política la rendición de cuentas democrática, el comportamiento ciudadano y la calidad de la gobernanza?</em> Mi investigación combina economía política comparada con avances en metodología de encuestas y datos electorales a gran escala. Desarrollo software estadístico, diseño experimentos de encuesta y analizo dinámicas políticas subnacionales en América Latina. Mi trabajo ha sido publicado en <em>Comparative Political Studies</em>, <em>Party Politics</em>, <em>Review of International Political Economy</em>, <em>The R Journal</em>, entre otras revistas.
+                        <em>¿Cómo moldea la competencia política la rendición de cuentas democrática, el comportamiento ciudadano y la economía política de la gobernanza?</em> Respondo esta pregunta combinando política comparada, economía política, metodología de encuestas y estadística bayesiana — una combinación poco usual que me permite desarrollar nuevas herramientas de medición y probar teorías sustantivas sobre la política democrática en América Latina.
                     </p>
 
                     <div class="hero-links">
@@ -829,84 +833,164 @@
     <section class="band-green" id="research">
         <div class="band-inner">
             <div class="section-header fade-up">
-                <h2 class="section-title lang-en">Research</h2>
-                <h2 class="section-title lang-es">Investigación</h2>
+                <h2 class="section-title lang-en">Research Programs</h2>
+                <h2 class="section-title lang-es">Programas de Investigación</h2>
                 <div class="section-line"></div>
             </div>
-            <div class="interests-grid">
+            <p class="fade-up" style="color: rgba(255,255,255,0.75); margin-bottom: 2rem; max-width: 780px; font-size: 0.95rem; line-height: 1.75;">
+                <span class="lang-en">I study a single phenomenon from multiple angles: how political competition shapes democratic accountability. To answer this question, I draw on political behavior, political economy, survey methodology, subnational elections, and Bayesian methods.</span>
+                <span class="lang-es">Estudio un solo fenómeno desde múltiples ángulos: cómo la competencia política moldea la rendición de cuentas democrática. Para responder esta pregunta, recurro al comportamiento político, la economía política, la metodología de encuestas, las elecciones subnacionales y los métodos bayesianos.</span>
+            </p>
+            <div class="interests-grid" style="grid-template-columns: repeat(4, 1fr);">
                 <div class="interest-card fade-up">
                     <div class="interest-icon"><i class="fas fa-users"></i></div>
                     <h3 class="lang-en">Political Behavior &amp; Democratic Accountability</h3>
                     <h3 class="lang-es">Comportamiento Político y Rendición de Cuentas</h3>
-                    <p class="lang-en">How affective polarization, partisan hostility, and electoral competition shape citizen behavior and democratic accountability in developing democracies.</p>
-                    <p class="lang-es">Cómo la polarización afectiva, la hostilidad partidista y la competencia electoral moldean el comportamiento ciudadano y la rendición de cuentas democrática.</p>
+                    <p class="lang-en">How affective polarization, partisan hostility, and electoral dynamics shape citizen behavior and democratic legitimacy.</p>
+                    <p class="lang-es">Cómo la polarización afectiva, la hostilidad partidista y las dinámicas electorales moldean el comportamiento ciudadano y la legitimidad democrática.</p>
                 </div>
                 <div class="interest-card fade-up" style="transition-delay: 0.1s;">
                     <div class="interest-icon"><i class="fas fa-university"></i></div>
                     <h3 class="lang-en">Political Economy of Democratic Governance</h3>
                     <h3 class="lang-es">Economía Política de la Gobernanza Democrática</h3>
-                    <p class="lang-en">How political-economic institutions, electoral systems, and international financial organizations interact to shape economic policies, social spending, and distributive outcomes.</p>
-                    <p class="lang-es">Cómo las instituciones político-económicas, los sistemas electorales y los organismos financieros internacionales interactúan para influir en políticas económicas, gasto social y resultados distributivos.</p>
+                    <p class="lang-en">How electoral systems, financial institutions, and international organizations interact to shape redistribution, social spending, and economic policy.</p>
+                    <p class="lang-es">Cómo los sistemas electorales, las instituciones financieras y los organismos internacionales interactúan para moldear la redistribución, el gasto social y la política económica.</p>
                 </div>
                 <div class="interest-card fade-up" style="transition-delay: 0.2s;">
                     <div class="interest-icon"><i class="fas fa-code"></i></div>
                     <h3 class="lang-en">Political Measurement &amp; Survey Methodology</h3>
                     <h3 class="lang-es">Medición Política y Metodología de Encuestas</h3>
-                    <p class="lang-en">Developing statistical software and novel measurement tools — including Bayesian survival models, inflated discrete choice estimators, and bias-correction methods for survey data.</p>
-                    <p class="lang-es">Desarrollo de software estadístico y herramientas de medición novedosas — incluyendo modelos bayesianos de supervivencia, estimadores de elección discreta inflados y métodos de corrección de sesgo para datos de encuesta.</p>
+                    <p class="lang-en">Developing open-source statistical software, Bayesian survival models, inflated discrete choice estimators, and bias-correction methods.</p>
+                    <p class="lang-es">Desarrollo de software estadístico de código abierto, modelos bayesianos de supervivencia, estimadores de elección discreta inflados y métodos de corrección de sesgo.</p>
+                </div>
+                <div class="interest-card fade-up" style="transition-delay: 0.3s;">
+                    <div class="interest-icon"><i class="fas fa-map-marked-alt"></i></div>
+                    <h3 class="lang-en">Electoral Competition &amp; Subnational Politics</h3>
+                    <h3 class="lang-es">Competencia Electoral y Política Subnacional</h3>
+                    <p class="lang-en">Subnational electoral heterogeneity, local democratic representation, and distributive politics across Mexican and Brazilian municipalities.</p>
+                    <p class="lang-es">Heterogeneidad electoral subnacional, representación democrática local y política distributiva en municipios de México y Brasil.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Current Projects -->
-    <section class="section" id="projects">
+    <!-- Research Impact — Numbers -->
+    <section class="section" style="padding: 3rem 2rem;">
+        <div style="max-width: 1140px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; text-align: center;">
+            <div class="fade-up">
+                <div style="font-family: var(--serif); font-size: 2.5rem; font-weight: 800; color: var(--cide);">14</div>
+                <div style="font-size: 0.82rem; color: var(--ink-muted); text-transform: uppercase; letter-spacing: 0.06em; font-weight: 600;">
+                    <span class="lang-en">Peer-Reviewed Articles</span>
+                    <span class="lang-es">Artículos Arbitrados</span>
+                </div>
+            </div>
+            <div class="fade-up" style="transition-delay: 0.1s;">
+                <div style="font-family: var(--serif); font-size: 2.5rem; font-weight: 800; color: var(--cide);">6</div>
+                <div style="font-size: 0.82rem; color: var(--ink-muted); text-transform: uppercase; letter-spacing: 0.06em; font-weight: 600;">
+                    <span class="lang-en">Open-Source Packages</span>
+                    <span class="lang-es">Paquetes de Código Abierto</span>
+                </div>
+            </div>
+            <div class="fade-up" style="transition-delay: 0.2s;">
+                <div style="font-family: var(--serif); font-size: 2.5rem; font-weight: 800; color: var(--cide);">2</div>
+                <div style="font-size: 0.82rem; color: var(--ink-muted); text-transform: uppercase; letter-spacing: 0.06em; font-weight: 600;">
+                    <span class="lang-en">Best Paper Awards</span>
+                    <span class="lang-es">Premios al Mejor Artículo</span>
+                </div>
+            </div>
+            <div class="fade-up" style="transition-delay: 0.3s;">
+                <div style="font-family: var(--serif); font-size: 2.5rem; font-weight: 800; color: var(--cide);">20+</div>
+                <div style="font-size: 0.82rem; color: var(--ink-muted); text-transform: uppercase; letter-spacing: 0.06em; font-weight: 600;">
+                    <span class="lang-en">Journals Reviewed</span>
+                    <span class="lang-es">Revistas Dictaminadas</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Current Research -->
+    <section class="section" id="projects" style="padding-top: 1rem;">
         <div class="section-header fade-up">
-            <h2 class="section-title lang-en">Current Projects</h2>
-            <h2 class="section-title lang-es">Proyectos Actuales</h2>
+            <h2 class="section-title lang-en">Current Research</h2>
+            <h2 class="section-title lang-es">Investigación Actual</h2>
             <div class="section-line"></div>
         </div>
 
-        <div class="interests-grid" style="margin-bottom: 0;">
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem;">
             <div class="software-card fade-up" style="border-top-color: var(--gold);">
-                <div class="software-name" style="font-family: var(--serif); font-size: 1.05rem;">
-                    <i class="fas fa-book" style="color: var(--gold); margin-right: 0.4rem;"></i>
-                    <span class="lang-en">Book Project</span>
-                    <span class="lang-es">Proyecto de Libro</span>
+                <div style="font-size: 0.7rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem;">
+                    <i class="fas fa-book" style="margin-right: 0.3rem;"></i>
+                    <span class="lang-en">Book</span>
+                    <span class="lang-es">Libro</span>
                 </div>
-                <h4 style="font-family: var(--serif); font-size: 1rem; font-style: italic; color: var(--ink); margin: 0.5rem 0;">The Illusion of National Politics</h4>
-                <p class="lang-en">A study of subnational electoral heterogeneity and its consequences for democratic representation in Mexico (1997-2024).</p>
-                <p class="lang-es">Un estudio sobre la heterogeneidad electoral subnacional y sus consecuencias para la representación democrática en México (1997-2024).</p>
+                <h4 style="font-family: var(--serif); font-size: 1.1rem; font-weight: 700; color: var(--ink); margin-bottom: 0.5rem;"><em>The Illusion of National Politics</em></h4>
+                <p class="lang-en">Why do we assume national elections produce nationally uniform outcomes? This book uses 36,000+ municipal elections in Mexico (1997-2024) to show that subnational electoral heterogeneity fundamentally challenges how we understand democratic representation.</p>
+                <p class="lang-es">¿Por qué asumimos que las elecciones nacionales producen resultados uniformes? Este libro analiza más de 36,000 elecciones municipales en México (1997-2024) para mostrar que la heterogeneidad electoral subnacional desafía la forma en que entendemos la representación democrática.</p>
             </div>
             <div class="software-card fade-up" style="transition-delay: 0.1s;">
-                <div class="software-name" style="font-family: var(--serif); font-size: 0.95rem;">
+                <div style="font-size: 0.7rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--cide); margin-bottom: 0.5rem;">
+                    <i class="fas fa-chart-bar" style="margin-right: 0.3rem;"></i>
+                    <span class="lang-en">Survey Measurement</span>
+                    <span class="lang-es">Medición de Encuestas</span>
+                </div>
+                <h4 style="font-family: var(--serif); font-size: 1.05rem; font-weight: 700; color: var(--ink); margin-bottom: 0.5rem;">
                     <span class="lang-en">Measuring Hidden Political Preferences</span>
                     <span class="lang-es">Midiendo Preferencias Políticas Ocultas</span>
-                </div>
-                <p class="lang-en">Development of inflated discrete choice models (BZiOP) for detecting masked survey responses in sensitive political contexts.</p>
-                <p class="lang-es">Desarrollo de modelos de elección discreta inflados (BZiOP) para detectar respuestas enmascaradas en encuestas sobre temas políticos sensibles.</p>
+                </h4>
+                <p class="lang-en">New inflated discrete choice models (BZiOP) for detecting masked survey responses in sensitive political contexts. Developing identification results for Political Analysis.</p>
+                <p class="lang-es">Nuevos modelos de elección discreta inflados (BZiOP) para detectar respuestas enmascaradas en contextos políticos sensibles. Desarrollando resultados de identificación para Political Analysis.</p>
             </div>
             <div class="software-card fade-up" style="transition-delay: 0.2s;">
-                <div class="software-name" style="font-family: var(--serif); font-size: 0.95rem;">
-                    <span class="lang-en">Who Is Missing from Vote Choice Models?</span>
-                    <span class="lang-es">¿Quién Falta en los Modelos de Voto?</span>
+                <div style="font-size: 0.7rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--cide); margin-bottom: 0.5rem;">
+                    <i class="fas fa-users" style="margin-right: 0.3rem;"></i>
+                    <span class="lang-en">Democratic Accountability</span>
+                    <span class="lang-es">Rendición de Cuentas</span>
                 </div>
-                <p class="lang-en">Correcting participation-gated survey bias in electoral studies using generalized inflated multinomial logit models (GiMNL).</p>
-                <p class="lang-es">Corrección del sesgo de participación en estudios electorales mediante modelos logit multinomial inflados generalizados (GiMNL).</p>
+                <h4 style="font-family: var(--serif); font-size: 1.05rem; font-weight: 700; color: var(--ink); margin-bottom: 0.5rem;">
+                    <span class="lang-en">Affective Polarization and Democratic Legitimacy</span>
+                    <span class="lang-es">Polarización Afectiva y Legitimidad Democrática</span>
+                </h4>
+                <p class="lang-en">How does partisan hostility erode democratic accountability? Studying asymmetric affective polarization under dominant-party systems in Mexico and Latin America.</p>
+                <p class="lang-es">¿Cómo la hostilidad partidista erosiona la rendición de cuentas? Estudio de la polarización afectiva asimétrica bajo sistemas de partido dominante en México y América Latina.</p>
+            </div>
+            <div class="software-card fade-up" style="transition-delay: 0.3s;">
+                <div style="font-size: 0.7rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--cide); margin-bottom: 0.5rem;">
+                    <i class="fas fa-university" style="margin-right: 0.3rem;"></i>
+                    <span class="lang-en">Political Economy</span>
+                    <span class="lang-es">Economía Política</span>
+                </div>
+                <h4 style="font-family: var(--serif); font-size: 1.05rem; font-weight: 700; color: var(--ink); margin-bottom: 0.5rem;">
+                    <span class="lang-en">Institutions, Redistribution, and Representation</span>
+                    <span class="lang-es">Instituciones, Redistribución y Representación</span>
+                </h4>
+                <p class="lang-en">How political-economic institutions shape social spending, financial governance, and distributive politics in developing democracies.</p>
+                <p class="lang-es">Cómo las instituciones político-económicas moldean el gasto social, la gobernanza financiera y la política distributiva en democracias en desarrollo.</p>
             </div>
         </div>
     </section>
 
-    <!-- Publications -->
-    <section class="section" id="publications">
+    <!-- Selected Publications -->
+    <section class="section" id="publications" style="padding-top: 1rem;">
         <div class="section-header fade-up">
-            <h2 class="section-title lang-en">Publications</h2>
-            <h2 class="section-title lang-es">Publicaciones</h2>
+            <h2 class="section-title lang-en">Selected Publications</h2>
+            <h2 class="section-title lang-es">Publicaciones Selectas</h2>
             <div class="section-line"></div>
         </div>
 
-        <div class="pub-subsection fade-up lang-en">Peer-Reviewed Articles</div>
-        <div class="pub-subsection fade-up lang-es">Artículos Arbitrados</div>
+        <!-- Research Impact -->
+        <div class="fade-up" style="display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 2.5rem;">
+            <span style="font-family: var(--serif); font-size: 0.85rem; font-style: italic; padding: 0.4rem 1rem; background: var(--cide-glow); border-radius: 3px; color: var(--cide);">Comparative Political Studies</span>
+            <span style="font-family: var(--serif); font-size: 0.85rem; font-style: italic; padding: 0.4rem 1rem; background: var(--cide-glow); border-radius: 3px; color: var(--cide);">Review of International Political Economy</span>
+            <span style="font-family: var(--serif); font-size: 0.85rem; font-style: italic; padding: 0.4rem 1rem; background: var(--cide-glow); border-radius: 3px; color: var(--cide);">Party Politics</span>
+            <span style="font-family: var(--serif); font-size: 0.85rem; font-style: italic; padding: 0.4rem 1rem; background: var(--cide-glow); border-radius: 3px; color: var(--cide);">Studies in Comparative International Development</span>
+            <span style="font-family: var(--serif); font-size: 0.85rem; font-style: italic; padding: 0.4rem 1rem; background: var(--cide-glow); border-radius: 3px; color: var(--cide);">The R Journal</span>
+            <span style="font-family: var(--serif); font-size: 0.85rem; font-style: italic; padding: 0.4rem 1rem; background: var(--cide-glow); border-radius: 3px; color: var(--cide);">Journal of Open Source Software</span>
+            <span style="font-family: var(--serif); font-size: 0.85rem; font-style: italic; padding: 0.4rem 1rem; background: var(--cide-glow); border-radius: 3px; color: var(--cide);">Latin American Politics and Society</span>
+            <span style="font-family: var(--serif); font-size: 0.85rem; font-style: italic; padding: 0.4rem 1rem; background: var(--cide-glow); border-radius: 3px; color: var(--cide);">International Political Science Review</span>
+        </div>
+
+        <div class="pub-subsection fade-up lang-en">Democratic Accountability &amp; Political Behavior</div>
+        <div class="pub-subsection fade-up lang-es">Rendición de Cuentas y Comportamiento Político</div>
 
         <ul class="pub-list">
             <li class="pub-item fade-up">
@@ -914,15 +998,15 @@
                 <div class="pub-details">
                     <h4>"Determinants of Affective Polarization in Mexico's 2018 Presidential Election"</h4>
                     <div class="pub-authors"><strong>Béjar, Sergio</strong></div>
-                    <div class="pub-venue">Revista Latinoamericana de Opinión Pública 13</div>
+                    <div class="pub-venue">Revista Latinoamericana de Opinión Pública 13 · Premio María Braun, Best Article</div>
                 </div>
             </li>
             <li class="pub-item fade-up">
                 <span class="pub-year">2024</span>
                 <div class="pub-details">
-                    <h4><a href="https://link.springer.com/article/10.1007/s12116-024-09441-3">"Domestic Financial Intermediaries, Dictatorship, and Social Spending"</a></h4>
-                    <div class="pub-authors"><strong>Béjar, Sergio</strong> and Bumba Mukherjee</div>
-                    <div class="pub-venue">Studies in Comparative International Development</div>
+                    <h4><a href="https://www.researchgate.net/profile/Juan-Moraes/publication/383523691">"Latin America: Affective Polarization and Weak Partisan Institutions"</a></h4>
+                    <div class="pub-authors">Moraes, J.A. and <strong>Sergio Béjar</strong></div>
+                    <div class="pub-venue">Handbook of Affective Polarization, Edward Elgar (Harteveld &amp; Torcal, eds.)</div>
                 </div>
             </li>
             <li class="pub-item fade-up">
@@ -930,31 +1014,7 @@
                 <div class="pub-details">
                     <h4><a href="https://journals.sagepub.com/doi/abs/10.1177/13540688221095098">"Electoral Volatility and Political Polarization in Developing Democracies: Evidence from Latin America, 1993–2016"</a></h4>
                     <div class="pub-authors">Moraes, J.A. and <strong>Sergio Béjar</strong></div>
-                    <div class="pub-venue">Party Politics</div>
-                </div>
-            </li>
-            <li class="pub-item fade-up">
-                <span class="pub-year">2021</span>
-                <div class="pub-details">
-                    <h4><a href="https://journal.r-project.org/dev/articles/RJ-2021-068/RJ-2021-068.pdf">"BayesSPsurv: An R Package to Estimate Bayesian (Spatial) Split-Population Survival Models"</a></h4>
-                    <div class="pub-authors">Bolte, B., Nicolás Schmidt, <strong>Sergio Béjar</strong>, Nguyen Huynh, and Bumba Mukherjee</div>
-                    <div class="pub-venue">R Journal 13(1): 595</div>
-                </div>
-            </li>
-            <li class="pub-item fade-up">
-                <span class="pub-year">2021</span>
-                <div class="pub-details">
-                    <h4><a href="https://joss.theoj.org/papers/10.21105/joss.03322.pdf">"IDCeMPy: Python Package for Inflated Discrete Choice Models"</a></h4>
-                    <div class="pub-authors">Huynh, Nguyen, <strong>Sergio Béjar</strong>, Vineeta Yadav, and Bumba Mukherjee</div>
-                    <div class="pub-venue">Journal of Open Source Software 6(63): 3322</div>
-                </div>
-            </li>
-            <li class="pub-item fade-up">
-                <span class="pub-year">2020</span>
-                <div class="pub-details">
-                    <h4><a href="https://joss.theoj.org/papers/10.21105/joss.02164.pdf">"BayesMFSurv: An R Package to Estimate Bayesian Split-Population Survival Models With (and Without) Misclassified Failure Events"</a></h4>
-                    <div class="pub-authors">Joo, M., Nicolás Schmidt, <strong>Sergio Béjar</strong>, Vineeta Yadav, and Bumba Mukherjee</div>
-                    <div class="pub-venue">Journal of Open Source Software 5(48): 2164</div>
+                    <div class="pub-venue">Party Politics · Honorable Mention, Premio Carlos Real de Azúa, AUCiP</div>
                 </div>
             </li>
             <li class="pub-item fade-up">
@@ -965,12 +1025,18 @@
                     <div class="pub-venue">Journal of Elections, Public Opinion and Parties 30(1): 1–21</div>
                 </div>
             </li>
+        </ul>
+
+        <div class="pub-subsection fade-up lang-en">Political Economy</div>
+        <div class="pub-subsection fade-up lang-es">Economía Política</div>
+
+        <ul class="pub-list">
             <li class="pub-item fade-up">
-                <span class="pub-year">2016</span>
+                <span class="pub-year">2024</span>
                 <div class="pub-details">
-                    <h4><a href="https://doi.org/10.1111/j.1548-2456.2016.00309.x">"The IMF, Party System Institutionalization and Protest in Latin America"</a></h4>
-                    <div class="pub-authors"><strong>Béjar, Sergio</strong> and J.A. Moraes</div>
-                    <div class="pub-venue">Latin American Politics and Society 58(2): 26–48</div>
+                    <h4><a href="https://link.springer.com/article/10.1007/s12116-024-09441-3">"Domestic Financial Intermediaries, Dictatorship, and Social Spending"</a></h4>
+                    <div class="pub-authors"><strong>Béjar, Sergio</strong> and Bumba Mukherjee</div>
+                    <div class="pub-venue">Studies in Comparative International Development</div>
                 </div>
             </li>
             <li class="pub-item fade-up">
@@ -987,6 +1053,14 @@
                     <h4><a href="https://doi.org/10.1080/09692290.2013.822410">"Candidate-Centered Systems, Public Banks and Equity Market Restrictions in Developing Countries"</a></h4>
                     <div class="pub-authors">Mukherjee, Bumba, Vineeta Yadav, and <strong>Sergio Béjar</strong></div>
                     <div class="pub-venue">Review of International Political Economy 21(3): 670–709</div>
+                </div>
+            </li>
+            <li class="pub-item fade-up">
+                <span class="pub-year">2016</span>
+                <div class="pub-details">
+                    <h4><a href="https://doi.org/10.1111/j.1548-2456.2016.00309.x">"The IMF, Party System Institutionalization and Protest in Latin America"</a></h4>
+                    <div class="pub-authors"><strong>Béjar, Sergio</strong> and J.A. Moraes</div>
+                    <div class="pub-venue">Latin American Politics and Society 58(2): 26–48</div>
                 </div>
             </li>
             <li class="pub-item fade-up">
@@ -1015,40 +1089,99 @@
             </li>
         </ul>
 
-        <div class="pub-subsection fade-up lang-en">Book Chapters</div>
-        <div class="pub-subsection fade-up lang-es">Capítulos de Libro</div>
+        <div class="pub-subsection fade-up lang-en">Political Measurement &amp; Software</div>
+        <div class="pub-subsection fade-up lang-es">Medición Política y Software</div>
 
         <ul class="pub-list">
             <li class="pub-item fade-up">
-                <span class="pub-year">2024</span>
+                <span class="pub-year">2021</span>
                 <div class="pub-details">
-                    <h4><a href="https://www.researchgate.net/profile/Juan-Moraes/publication/383523691">"Latin America: Affective Polarization and Weak Partisan Institutions"</a></h4>
-                    <div class="pub-authors">Moraes, J.A. and <strong>Sergio Béjar</strong></div>
-                    <div class="pub-venue">Handbook of Affective Polarization, Edward Elgar (Harteveld &amp; Torcal, eds.)</div>
+                    <h4><a href="https://journal.r-project.org/dev/articles/RJ-2021-068/RJ-2021-068.pdf">"BayesSPsurv: An R Package to Estimate Bayesian (Spatial) Split-Population Survival Models"</a></h4>
+                    <div class="pub-authors">Bolte, B., Nicolás Schmidt, <strong>Sergio Béjar</strong>, Nguyen Huynh, and Bumba Mukherjee</div>
+                    <div class="pub-venue">The R Journal 13(1): 595–613</div>
+                </div>
+            </li>
+            <li class="pub-item fade-up">
+                <span class="pub-year">2021</span>
+                <div class="pub-details">
+                    <h4><a href="https://joss.theoj.org/papers/10.21105/joss.03322.pdf">"IDCeMPy: Python Package for Inflated Discrete Choice Models"</a></h4>
+                    <div class="pub-authors">Huynh, Nguyen, <strong>Sergio Béjar</strong>, Vineeta Yadav, and Bumba Mukherjee</div>
+                    <div class="pub-venue">Journal of Open Source Software 6(63): 3322</div>
+                </div>
+            </li>
+            <li class="pub-item fade-up">
+                <span class="pub-year">2020</span>
+                <div class="pub-details">
+                    <h4><a href="https://joss.theoj.org/papers/10.21105/joss.02164.pdf">"BayesMFSurv: An R Package to Estimate Bayesian Split-Population Survival Models With (and Without) Misclassified Failure Events"</a></h4>
+                    <div class="pub-authors">Joo, M., Nicolás Schmidt, <strong>Sergio Béjar</strong>, Vineeta Yadav, and Bumba Mukherjee</div>
+                    <div class="pub-venue">Journal of Open Source Software 5(48): 2164</div>
                 </div>
             </li>
         </ul>
+    </section>
 
-        <div class="pub-subsection fade-up">Software</div>
-
-        <div class="software-grid">
-            <div class="software-card fade-up">
-                <div class="software-name"><a href="https://github.com/Nicolas-Schmidt/BayesSPsurv">BayesSPsurv</a></div>
-                <p class="lang-en">Bayesian spatial split-population survival models for clustered event processes.</p>
-                <p class="lang-es">Modelos bayesianos espaciales de supervivencia con población dividida para procesos de eventos agrupados.</p>
-                <span class="software-lang lang-r">R · CRAN</span>
+    <!-- Software — Dedicated Section -->
+    <section class="band-sand" id="software" style="padding: 4rem 2rem;">
+        <div class="band-inner">
+            <div class="section-header fade-up">
+                <h2 class="section-title">Software</h2>
+                <div class="section-line"></div>
             </div>
-            <div class="software-card fade-up" style="transition-delay: 0.1s;">
-                <div class="software-name"><a href="https://github.com/Nicolas-Schmidt/BayesMFSurv">BayesMFSurv</a></div>
-                <p class="lang-en">Bayesian split-population survival models with and without misclassified failure events.</p>
-                <p class="lang-es">Modelos bayesianos de supervivencia con población dividida con y sin eventos de fallo mal clasificados.</p>
-                <span class="software-lang lang-r">R · CRAN</span>
+            <p class="fade-up" style="color: var(--ink-light); margin-bottom: 2rem; max-width: 680px; font-size: 0.95rem;">
+                <span class="lang-en">I develop peer-reviewed, open-source statistical packages for R and Python. All source code, documentation, and examples are available on <a href="https://github.com/Sergio-Bejar" style="color: var(--cide); font-weight: 600;">GitHub</a>.</span>
+                <span class="lang-es">Desarrollo paquetes estadísticos de código abierto y dictaminados por pares para R y Python. Todo el código, documentación y ejemplos están disponibles en <a href="https://github.com/Sergio-Bejar" style="color: var(--cide); font-weight: 600;">GitHub</a>.</span>
+            </p>
+            <div class="software-grid">
+                <div class="software-card fade-up">
+                    <div class="software-name"><a href="https://github.com/Nicolas-Schmidt/BayesSPsurv">BayesSPsurv</a></div>
+                    <p class="lang-en">Bayesian spatial split-population survival models for clustered event processes.</p>
+                    <p class="lang-es">Modelos bayesianos espaciales de supervivencia con población dividida.</p>
+                    <span class="software-lang lang-r">R · CRAN</span>
+                    <div style="margin-top: 0.5rem; font-size: 0.78rem;">
+                        <a href="https://github.com/Nicolas-Schmidt/BayesSPsurv" style="color: var(--cide); text-decoration: none; margin-right: 0.8rem;"><i class="fab fa-github"></i> Code</a>
+                        <a href="https://journal.r-project.org/dev/articles/RJ-2021-068/RJ-2021-068.pdf" style="color: var(--cide); text-decoration: none;"><i class="fas fa-file-alt"></i> Paper</a>
+                    </div>
+                </div>
+                <div class="software-card fade-up" style="transition-delay: 0.1s;">
+                    <div class="software-name"><a href="https://github.com/Nicolas-Schmidt/BayesMFSurv">BayesMFSurv</a></div>
+                    <p class="lang-en">Bayesian split-population survival models with misclassified failure events.</p>
+                    <p class="lang-es">Modelos bayesianos de supervivencia con eventos de fallo mal clasificados.</p>
+                    <span class="software-lang lang-r">R · CRAN</span>
+                    <div style="margin-top: 0.5rem; font-size: 0.78rem;">
+                        <a href="https://github.com/Nicolas-Schmidt/BayesMFSurv" style="color: var(--cide); text-decoration: none; margin-right: 0.8rem;"><i class="fab fa-github"></i> Code</a>
+                        <a href="https://joss.theoj.org/papers/10.21105/joss.02164.pdf" style="color: var(--cide); text-decoration: none;"><i class="fas fa-file-alt"></i> Paper</a>
+                    </div>
+                </div>
+                <div class="software-card fade-up" style="transition-delay: 0.2s;">
+                    <div class="software-name"><a href="https://pypi.org/project/idcempy/">IDCeMPy</a></div>
+                    <p class="lang-en">Inflated Discrete Choice Models: ZIOP/C, MIOP/C, and GIMNL estimators.</p>
+                    <p class="lang-es">Modelos de Elección Discreta Inflados: estimadores ZIOP/C, MIOP/C y GIMNL.</p>
+                    <span class="software-lang lang-python">Python · PyPI</span>
+                    <div style="margin-top: 0.5rem; font-size: 0.78rem;">
+                        <a href="https://github.com/hknd23/idcempy" style="color: var(--cide); text-decoration: none; margin-right: 0.8rem;"><i class="fab fa-github"></i> Code</a>
+                        <a href="https://joss.theoj.org/papers/10.21105/joss.03322.pdf" style="color: var(--cide); text-decoration: none;"><i class="fas fa-file-alt"></i> Paper</a>
+                    </div>
+                </div>
             </div>
-            <div class="software-card fade-up" style="transition-delay: 0.2s;">
-                <div class="software-name"><a href="https://pypi.org/project/idcempy/">IDCeMPy</a></div>
-                <p class="lang-en">Inflated Discrete Choice Models including ZIOP/C, MIOP/C, and GIMNL estimators.</p>
-                <p class="lang-es">Modelos de Elección Discreta Inflados incluyendo estimadores ZIOP/C, MIOP/C y GIMNL.</p>
-                <span class="software-lang lang-python">Python · PyPI</span>
+            <div style="margin-top: 1.25rem;" class="software-grid">
+                <div class="software-card fade-up" style="border-top-color: var(--gold); opacity: 0.85;">
+                    <div class="software-name">BVZiOP</div>
+                    <p class="lang-en">Bivariate Zero-Inflated Ordered Probit Models.</p>
+                    <p class="lang-es">Modelos probit ordenados bivariados con inflación de ceros.</p>
+                    <span class="software-lang lang-r" style="background: #f0ebe0; color: var(--ink-muted);">R · In Development</span>
+                </div>
+                <div class="software-card fade-up" style="transition-delay: 0.1s; border-top-color: var(--gold); opacity: 0.85;">
+                    <div class="software-name">ZMTiOP</div>
+                    <p class="lang-en">Inflated Ordered Probit with correlated errors.</p>
+                    <p class="lang-es">Probit ordenado inflado con errores correlacionados.</p>
+                    <span class="software-lang lang-r" style="background: #f0ebe0; color: var(--ink-muted);">R · In Development</span>
+                </div>
+                <div class="software-card fade-up" style="transition-delay: 0.2s; border-top-color: var(--gold); opacity: 0.85;">
+                    <div class="software-name"><a href="https://pypi.org/project/ziopcpy/">ziopcpy</a></div>
+                    <p class="lang-en">Zero-Inflated Ordered Probit Choice Models.</p>
+                    <p class="lang-es">Modelos de elección probit ordenados con inflación de ceros.</p>
+                    <span class="software-lang lang-python">Python · PyPI</span>
+                </div>
             </div>
         </div>
     </section>
@@ -1171,19 +1304,23 @@
             <div class="about-text fade-up">
                 <!-- EN -->
                 <div class="lang-en">
-                    <p>Originally from Mexico and a first-generation college student, I obtained my Ph.D. from the <a href="https://politicalscience.nd.edu">Department of Political Science</a> at the <a href="https://www.nd.edu">University of Notre Dame</a> in 2011. I did my BA in Economics at <a href="https://tec.mx/en">Tec de Monterrey</a> and an MA in Economics at the <a href="https://www.econ.pitt.edu/">University of Pittsburgh</a>, where I became a <a href="https://www.steelers.com/">Steelers</a> fan.</p>
+                    <p><strong>My work sits at the intersection of comparative politics, political economy, political behavior, and quantitative methodology.</strong> What makes my research distinctive is the combination of substantive questions about democratic politics with the development of new statistical tools to answer them. I am as likely to be writing a formal model of survey response as I am to be analyzing 36,000 municipal elections or designing a field experiment in rural Mexico.</p>
                     <br>
-                    <p>Before joining CIDE, I was an associate professor at <a href="https://www.sjsu.edu">San José State University</a>, and held positions at <a href="https://www.wpunj.edu">William Paterson University</a> and the <a href="https://www.utrgv.edu">University of Texas Rio Grande Valley</a>. I have also been a visiting research fellow at CIDE and at the <a href="https://stonecenter.tulane.edu/cipr">Center for Inter-American Policy and Research</a> at Tulane University.</p>
+                    <p>As Director of CIDE's Division of Political Studies, I lead one of Latin America's most productive political science departments. I serve on CIDE's Academic Council, its Board of Directors, and the Academic Evaluation Committee. I advise doctoral and master's students working on democratic politics, political behavior, and quantitative methods.</p>
                     <br>
-                    <p>Outside academia, I have two big passions: running and traveling. As a long-distance runner I've competed in the <a href="https://www.bmw-berlin-marathon.com/en/">Berlin Marathon</a>, the <a href="https://www.nyrr.org/tcsnycmarathon">NYC Marathon</a>, the <a href="https://www.chicagomarathon.com">Chicago Marathon</a>, and the <a href="https://www.baa.org">Boston Marathon</a>. I've visited 27 countries and counting.</p>
+                    <p>I grew up in Jiutepec, Morelos — a small city south of Mexico City. I was the first person in my family to attend college. I earned my Ph.D. from the <a href="https://politicalscience.nd.edu">University of Notre Dame</a> (2011), an MA in Economics from the <a href="https://www.econ.pitt.edu/">University of Pittsburgh</a>, and a BA in Economics from <a href="https://tec.mx/en">Tec de Monterrey</a>. Before CIDE, I was a tenured associate professor at <a href="https://www.sjsu.edu">San José State University</a>.</p>
+                    <br>
+                    <p>Outside academia, I am a competitive long-distance runner. I have raced the <a href="https://www.bmw-berlin-marathon.com/en/">Berlin</a>, <a href="https://www.nyrr.org/tcsnycmarathon">New York</a>, <a href="https://www.chicagomarathon.com">Chicago</a>, and <a href="https://www.baa.org">Boston</a> marathons. I have visited 27 countries and counting.</p>
                 </div>
                 <!-- ES -->
                 <div class="lang-es">
-                    <p>Originario de México y estudiante universitario de primera generación, obtuve mi doctorado en el <a href="https://politicalscience.nd.edu">Departamento de Ciencia Política</a> de la <a href="https://www.nd.edu">Universidad de Notre Dame</a> en 2011. Estudié la licenciatura en Economía en el <a href="https://tec.mx/es">Tec de Monterrey</a> y una maestría en Economía en la <a href="https://www.econ.pitt.edu/">Universidad de Pittsburgh</a>, donde me hice fan de los <a href="https://www.steelers.com/">Steelers</a>.</p>
+                    <p><strong>Mi trabajo se sitúa en la intersección de la política comparada, la economía política, el comportamiento político y la metodología cuantitativa.</strong> Lo que distingue mi investigación es la combinación de preguntas sustantivas sobre la política democrática con el desarrollo de nuevas herramientas estadísticas para responderlas. Es igual de probable encontrarme escribiendo un modelo formal de respuesta de encuesta que analizando 36,000 elecciones municipales o diseñando un experimento de campo en el México rural.</p>
                     <br>
-                    <p>Antes de incorporarme al CIDE, fui profesor asociado en la <a href="https://www.sjsu.edu">San José State University</a>, y ocupé puestos en <a href="https://www.wpunj.edu">William Paterson University</a> y la <a href="https://www.utrgv.edu">University of Texas Rio Grande Valley</a>. También fui investigador visitante en el CIDE y en el <a href="https://stonecenter.tulane.edu/cipr">Center for Inter-American Policy and Research</a> de la Universidad de Tulane.</p>
+                    <p>Como Director de la División de Estudios Políticos del CIDE, lidero uno de los departamentos de ciencia política más productivos de América Latina. Formo parte del Consejo Académico del CIDE, su Junta de Directores y la Comisión Académica Dictaminadora. Asesoro estudiantes de doctorado y maestría que trabajan en política democrática, comportamiento político y métodos cuantitativos.</p>
                     <br>
-                    <p>Fuera de la academia, tengo dos grandes pasiones: correr y viajar. Como corredor de larga distancia he competido en el <a href="https://www.bmw-berlin-marathon.com/en/">Maratón de Berlín</a>, el <a href="https://www.nyrr.org/tcsnycmarathon">Maratón de Nueva York</a>, el <a href="https://www.chicagomarathon.com">Maratón de Chicago</a> y el <a href="https://www.baa.org">Maratón de Boston</a>. He visitado 27 países y contando.</p>
+                    <p>Crecí en Jiutepec, Morelos — una pequeña ciudad al sur de la Ciudad de México. Fui la primera persona de mi familia en ir a la universidad. Obtuve mi doctorado en la <a href="https://politicalscience.nd.edu">Universidad de Notre Dame</a> (2011), una maestría en Economía en la <a href="https://www.econ.pitt.edu/">Universidad de Pittsburgh</a>, y la licenciatura en Economía en el <a href="https://tec.mx/es">Tec de Monterrey</a>. Antes del CIDE, fui profesor asociado con definitividad en <a href="https://www.sjsu.edu">San José State University</a>.</p>
+                    <br>
+                    <p>Fuera de la academia, soy corredor competitivo de larga distancia. He competido en los maratones de <a href="https://www.bmw-berlin-marathon.com/en/">Berlín</a>, <a href="https://www.nyrr.org/tcsnycmarathon">Nueva York</a>, <a href="https://www.chicagomarathon.com">Chicago</a> y <a href="https://www.baa.org">Boston</a>. He visitado 27 países y contando.</p>
                 </div>
             </div>
             <div class="fade-up" style="transition-delay: 0.15s;">
