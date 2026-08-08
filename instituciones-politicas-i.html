@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instituciones Políticas I — Sergio Béjar López</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,800;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --cide: #163D34;
+            --cide-light: #1e5446;
+            --cide-dark: #0f2b25;
+            --cide-glow: rgba(22, 61, 52, 0.08);
+            --gold: #C8A435;
+            --gold-light: #e8c94a;
+            --gold-soft: #fdf6e0;
+            --graphite: #3a3a3a;
+            --terracotta: #b5452a;
+            --white: #ffffff;
+            --off-white: #f9f8f5;
+            --ink: #1a1a1a;
+            --ink-light: #3a3a3a;
+            --ink-muted: #6d6d6d;
+            --border: #e2e0db;
+            --border-light: #eceae5;
+            --serif: 'Playfair Display', 'Georgia', serif;
+            --sans: 'DM Sans', 'Helvetica Neue', sans-serif;
+            --mono: 'JetBrains Mono', monospace;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--sans);
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--ink);
+            background: var(--off-white);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ── Navigation ── */
+        .site-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: var(--cide);
+            border-bottom: 3px solid var(--gold);
+        }
+
+        .nav-inner {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 62px;
+        }
+
+        .nav-brand {
+            font-family: var(--serif);
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .nav-back {
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: rgba(255,255,255,0.75);
+            text-decoration: none;
+            letter-spacing: 0.04em;
+            padding: 0.45rem 0.9rem;
+            border-radius: 3px;
+            transition: all 0.2s;
+        }
+
+        .nav-back:hover {
+            color: #fff;
+            background: rgba(255,255,255,0.12);
+        }
+
+        .nav-back i { margin-right: 0.4rem; }
+
+        /* ── Hero ── */
+        .course-hero {
+            background: linear-gradient(135deg, var(--cide-dark) 0%, var(--cide) 50%, var(--cide-light) 100%);
+            padding: 120px 2rem 3.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .course-hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, var(--gold), var(--terracotta), var(--gold));
+        }
+
+        .hero-inner {
+            max-width: 860px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .course-logo {
+            margin-bottom: 1.5rem;
+        }
+
+        .course-logo-text {
+            font-family: var(--sans);
+            font-size: 2.2rem;
+            font-weight: 300;
+            letter-spacing: 0.25em;
+            color: rgba(255,255,255,0.9);
+            text-transform: uppercase;
+            line-height: 1.4;
+        }
+
+        .course-logo-accent {
+            display: block;
+            width: 64px;
+            height: 4px;
+            background: var(--terracotta);
+            margin: 0.6rem auto 0.4rem;
+            border-radius: 1px;
+        }
+
+        .course-logo-numeral {
+            font-family: var(--sans);
+            font-size: 1.6rem;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            color: var(--terracotta);
+        }
+
+        .course-meta {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.6);
+            margin-top: 1.25rem;
+        }
+
+        .course-meta strong { color: rgba(255,255,255,0.85); font-weight: 600; }
+
+        /* ── Content ── */
+        .content {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 3.5rem 2rem;
+        }
+
+        .course-description {
+            font-size: 1.02rem;
+            color: var(--ink-light);
+            line-height: 1.85;
+            margin-bottom: 2.5rem;
+        }
+
+        .course-description p { margin-bottom: 1.25rem; }
+        .course-description p:last-child { margin-bottom: 0; }
+
+        .four-questions {
+            background: var(--cide-glow);
+            border-left: 4px solid var(--cide);
+            padding: 1.5rem 2rem;
+            margin-bottom: 3rem;
+            font-size: 0.95rem;
+            color: var(--ink-light);
+            line-height: 1.8;
+        }
+
+        .four-questions strong {
+            display: block;
+            font-family: var(--serif);
+            font-size: 1rem;
+            color: var(--cide);
+            margin-bottom: 0.5rem;
+        }
+
+        /* ── Modules ── */
+        .modules-header {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            margin-bottom: 2rem;
+        }
+
+        .modules-title {
+            font-family: var(--serif);
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--cide);
+        }
+
+        .modules-line {
+            flex: 1;
+            height: 2px;
+            background: linear-gradient(90deg, var(--cide), transparent);
+            opacity: 0.2;
+        }
+
+        .module {
+            margin-bottom: 1.25rem;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            background: var(--white);
+            overflow: hidden;
+        }
+
+        .module-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.25rem 1.5rem;
+            cursor: pointer;
+            transition: background 0.2s;
+            user-select: none;
+        }
+
+        .module-header:hover { background: var(--cide-glow); }
+
+        .module-number {
+            font-family: var(--mono);
+            font-size: 0.75rem;
+            font-weight: 400;
+            color: var(--white);
+            background: var(--cide);
+            padding: 0.2rem 0.55rem;
+            border-radius: 2px;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+
+        .module-name {
+            font-family: var(--serif);
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--ink);
+            flex: 1;
+        }
+
+        .module-toggle {
+            font-size: 0.85rem;
+            color: var(--ink-muted);
+            transition: transform 0.3s;
+            flex-shrink: 0;
+            margin-left: 1rem;
+        }
+
+        .module.open .module-toggle { transform: rotate(180deg); }
+
+        .module-sessions {
+            display: none;
+            border-top: 1px solid var(--border-light);
+            padding: 0;
+        }
+
+        .module.open .module-sessions { display: block; }
+
+        .session {
+            padding: 0.9rem 1.5rem 0.9rem 3.5rem;
+            border-bottom: 1px solid var(--border-light);
+            font-size: 0.9rem;
+            color: var(--ink-light);
+            position: relative;
+        }
+
+        .session:last-child { border-bottom: none; }
+
+        .session-number {
+            position: absolute;
+            left: 1.5rem;
+            font-family: var(--mono);
+            font-size: 0.78rem;
+            color: var(--ink-muted);
+        }
+
+        .session-title {
+            font-weight: 500;
+            color: var(--ink);
+        }
+
+        .session-readings {
+            margin-top: 0.4rem;
+            font-size: 0.82rem;
+            color: var(--ink-muted);
+            line-height: 1.65;
+        }
+
+        .session-readings li {
+            margin-bottom: 0.2rem;
+            list-style: none;
+            padding-left: 0.8rem;
+            position: relative;
+        }
+
+        .session-readings li::before {
+            content: '–';
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+        }
+
+        .session.parcial .session-title {
+            color: var(--terracotta);
+            font-weight: 600;
+        }
+
+        /* ── Action bar ── */
+        .action-bar {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 3rem;
+            padding-top: 2.5rem;
+            border-top: 1px solid var(--border-light);
+        }
+
+        .action-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: var(--sans);
+            font-size: 0.88rem;
+            font-weight: 600;
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            transition: all 0.2s;
+        }
+
+        .action-btn.primary {
+            background: var(--cide);
+            color: #fff;
+            border: 2px solid var(--cide);
+        }
+
+        .action-btn.primary:hover {
+            background: var(--cide-light);
+            border-color: var(--cide-light);
+        }
+
+        .action-btn.secondary {
+            background: transparent;
+            color: var(--cide);
+            border: 2px solid var(--border);
+        }
+
+        .action-btn.secondary:hover {
+            border-color: var(--cide);
+            background: var(--cide-glow);
+        }
+
+        .action-btn i { font-size: 1rem; }
+
+        /* ── Footer ── */
+        .course-footer {
+            background: var(--cide-dark);
+            color: rgba(255,255,255,0.5);
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.82rem;
+        }
+
+        .course-footer a {
+            color: var(--gold-light);
+            text-decoration: none;
+        }
+
+        .course-footer a:hover { color: #fff; }
+
+        /* ── Responsive ── */
+        @media (max-width: 768px) {
+            .course-hero { padding: 100px 1.5rem 2.5rem; }
+            .course-logo-text { font-size: 1.5rem; letter-spacing: 0.15em; }
+            .course-logo-numeral { font-size: 1.2rem; }
+            .session { padding-left: 3rem; }
+            .session-number { left: 1.25rem; }
+            .action-bar { flex-direction: column; align-items: stretch; }
+            .action-btn { justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="site-nav">
+        <div class="nav-inner">
+            <a href="/" class="nav-brand">Sergio Béjar López</a>
+            <a href="/#teaching" class="nav-back"><i class="fas fa-arrow-left"></i> Regresar al sitio</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="course-hero">
+        <div class="hero-inner">
+            <div class="course-logo">
+                <div class="course-logo-text">INSTITUCIONES<br>POLÍTICAS</div>
+                <span class="course-logo-accent"></span>
+                <div class="course-logo-numeral">I</div>
+            </div>
+            <div class="course-meta">
+                <strong>CIDE</strong> · Licenciatura en Ciencia Política y Relaciones Internacionales · <strong>Otoño 2026</strong><br>
+                Martes y jueves · 24 de agosto al 4 de diciembre · 30 sesiones
+            </div>
+        </div>
+    </section>
+
+    <!-- Content -->
+    <main class="content">
+
+        <div class="course-description">
+            <p>Las instituciones políticas organizan el poder — establecen quién puede decidir, bajo qué reglas, con qué límites y con qué consecuencias. Pero las instituciones no surgen en el vacío ni funcionan simplemente porque estén escritas. Son producto de conflictos políticos, distribuyen recursos y oportunidades de manera desigual, generan incentivos y, una vez establecidas, pueden resultar difíciles de transformar.</p>
+
+            <p>Este curso introduce las principales herramientas de la ciencia política para estudiar cómo surgen, funcionan y cambian las instituciones. A lo largo del semestre examinaremos distintas formas de entenderlas — como reglas, equilibrios, soluciones a problemas de cooperación y legados históricos — y utilizaremos esas perspectivas para analizar problemas concretos: la formación y capacidad del Estado, las constituciones, el federalismo, la ciudadanía, los partidos y las elecciones, las burocracias y las cortes, así como las instituciones de los regímenes democráticos y autoritarios.</p>
+
+            <p>El objetivo no es aprender un catálogo de instituciones, sino aprender a razonar institucionalmente — identificar qué intereses están en juego, qué incentivos produce una regla, qué relaciones de poder la sostienen y bajo qué condiciones puede cambiar.</p>
+        </div>
+
+        <div class="four-questions">
+            <strong>Cuatro preguntas recorren el curso</strong>
+            ¿Qué problema resuelve? · ¿A quién beneficia? · ¿Por qué persiste? · ¿Por qué cambia?
+        </div>
+
+        <!-- Modules -->
+        <div class="modules-header">
+            <h2 class="modules-title">Temario</h2>
+            <div class="modules-line"></div>
+        </div>
+
+        <!-- Module I -->
+        <div class="module">
+            <div class="module-header" onclick="this.parentElement.classList.toggle('open')">
+                <div style="display: flex; align-items: center;">
+                    <span class="module-number">I</span>
+                    <span class="module-name">Cómo pensar institucionalmente</span>
+                </div>
+                <i class="fas fa-chevron-down module-toggle"></i>
+            </div>
+            <div class="module-sessions">
+                <div class="session">
+                    <span class="session-number">1</span>
+                    <div class="session-title">Introducción</div>
+                </div>
+                <div class="session">
+                    <span class="session-number">2</span>
+                    <div class="session-title">Instituciones como reglas del juego</div>
+                    <ul class="session-readings">
+                        <li>North (1990). <em>Institutions, Institutional Change, and Economic Performance</em>, caps. 1-4</li>
+                        <li>Guala (2016). <em>Understanding Institutions</em>, cap. 1</li>
+                    </ul>
+                </div>
+                <div class="session">
+                    <span class="session-number">3</span>
+                    <div class="session-title">Instituciones, conflicto y distribución</div>
+                    <ul class="session-readings">
+                        <li>Knight (1992). <em>Institutions and Social Conflict</em>, caps. 1-2</li>
+                    </ul>
+                </div>
+                <div class="session">
+                    <span class="session-number">4</span>
+                    <div class="session-title">Racionalidad, acción colectiva y diseño institucional</div>
+                    <ul class="session-readings">
+                        <li>Levi (1997). "A Model, a Method, and a Map"</li>
+                        <li>Ostrom (1990). <em>Governing the Commons</em>, cap. 1</li>
+                    </ul>
+                </div>
+                <div class="session">
+                    <span class="session-number">5</span>
+                    <div class="session-title">Institucionalismo histórico y dependencia de trayectoria</div>
+                    <ul class="session-readings">
+                        <li>Thelen y Steinmo (1992). "Historical Institutionalism in Comparative Politics"</li>
+                        <li>Pierson (2004). <em>Politics in Time</em>, cap. 1</li>
+                    </ul>
+                </div>
+                <div class="session">
+                    <span class="session-number">6</span>
+                    <div class="session-title">Instituciones informales y debilidad institucional</div>
+                    <ul class="session-readings">
+                        <li>Helmke y Levitsky (2004). "Informal Institutions and Comparative Politics"</li>
+                        <li>Brinks, Levitsky y Murillo (2020). <em>The Politics of Institutional Weakness</em>, cap. 1</li>
+                    </ul>
+                </div>
+                <div class="session">
+                    <span class="session-number">7</span>
+                    <div class="session-title">¿Cómo medimos instituciones?</div>
+                    <ul class="session-readings">
+                        <li>Munck y Verkuilen (2002). "Conceptualizing and Measuring Democracy"</li>
+                        <li>Lührmann, Tannenberg y Lindberg (2018). "Regimes of the World"</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Module II -->
+        <div class="module">
+            <div class="module-header" onclick="this.parentElement.classList.toggle('open')">
+                <div style="display: flex; align-items: center;">
+                    <span class="module-number">II</span>
+                    <span class="module-name">Estado, autoridad y membresía política</span>
+                </div>
+                <i class="fas fa-chevron-down module-toggle"></i>
+            </div>
+            <div class="module-sessions">
+                <div class="session">
+                    <span class="session-number">8</span>
+                    <div class="session-title">Génesis del Estado y capacidad estatal</div>
+                    <ul class="session-readings">
+                        <li>O'Donnell (2010). <em>Democracy, Agency and the State</em>, caps. 1-2</li>
+                        <li>Holland (2017). <em>Forbearance as Redistribution</em>, cap. 1</li>
+                    </ul>
+                </div>
+                <div class="session">
+                    <span class="session-number">9</span>
+                    <div class="session-title">Violencia y orden social</div>
+                    <ul class="session-readings">
+                        <li>North, Wallis y Weingast (2009). <em>Violence and Social Orders</em>, caps. 1-2</li>
+                    </ul>
+                </div>
+                <div class="session">
+                    <span class="session-number">10</span>
+                    <div class="session-title">Constituciones como equilibrios políticos</div>
+                    <ul class="session-readings">
+                        <li>Galligan y Versteeg (2013). <em>Social and Political Foundations of Constitutions</em>, cap. 1</li>
+                        <li>Negretto (2014). "Authoritarian Constitution Making"</li>
+                    </ul>
+                </div>
+                <div class="session">
+                    <span class="session-number">11</span>
+                    <div class="session-title">Género e instituciones</div>
+                    <ul class="session-readings">
+                        <li>Htun y Weldon (2010). "When Do Governments Promote Women's Rights?"</li>
+                        <li>Waylen (2014). "Informal Institutions, Institutional Change, and Gender Equality"</li>
+                    </ul>
+                </div>
+                <div class="session">
+                    <span class="session-number">12</span>
+                    <div class="session-title">Federalismo, descentralización y autoritarismo subnacional</div>
+                    <ul class="session-readings">
+                        <li>Falleti (2005). "A Sequential Theory of Decentralization"</li>
+                        <li>Gibson (2005). "Boundary Control"</li>
+                    </ul>
+                </div>
+                <div class="session parcial">
+                    <span class="session-number">13</span>
+                    <div class="session-title">Evaluación parcial</div>
+                </div>
+                <div class="session">
+                    <span class="session-number">14</span>
+                    <div class="session-title">Membresía y ciudadanía</div>
+                    <ul class="session-readings">
+                        <li>Benhabib (2004). <em>The Rights of Others</em>, cap. 1</li>
+                        <li>FitzGerald y Cook-Martín (2014). <em>Culling the Masses</em>, cap. 3</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Module III -->
+        <div class="module">
+            <div class="module-header" onclick="this.parentElement.classList.toggle('open')">
+                <div style="display: flex; align-items: center;">
+                    <span class="module-number">III</span>
+                    <span class="module-name">Representación, control y rendición de cuentas</span>
+                </div>
+                <i class="fas fa-chevron-down module-toggle"></i>
+            </div>
+            <div class="module-sessions">
+                <div class="session">
+                    <span class="session-number">15</span>
+                    <div class="session-title">Representación, mandato y rendición de cuentas</div>
+                    <ul class="session-readings">
+                        <li>Przeworski, Stokes y Manin (1999). <em>Democracy, Accountability, and Representation</em>, intro.</li>
+                        <li>Fearon (1999). "Electoral Accountability and the Control of Politicians"</li>
+                    </ul>
+                </div>
+                <div class="session">
+                    <span class="session-number">16</span>
+                    <div class="session-title">Reglas electorales e incentivos de los políticos</div>
+                    <ul class="session-readings">
+                        <li>Norris (2004). <em>Electoral Engineering</em>, cap. 1</li>
+                        <li>Carey y Shugart (1995). "Incentives to Cultivate a Personal Vote"</li>
+                    </ul>
+                </div>
+                <div class="session">
+                    <span class="session-number">17</span>
+                    <div class="session-title">Partidos políticos como instituciones</div>
+                    <ul class="session-readings">
+                        <li>Mainwaring y Scully (1995). "Introduction: Party Systems in Latin America"</li>
+                        <li>Levitsky (2003). <em>Transforming Labor-Based Parties</em>, cap. 1</li>
+                    </ul>
+                </div>
+                <div class="session">
+                    <span class="session-number">18</span>
+                    <div class="session-title">Jugadores de veto y capacidad de decisión</div>
+                    <ul class="session-readings">
+                        <li>Tsebelis (2002). <em>Veto Players</em>, caps. 1-2</li>
+                    </ul>
+                </div>
+                <div class="session">
+                    <span class="session-number">19</span>
+                    <div class="session-title">Instituciones domésticas y política internacional</div>
+                    <ul class="session-readings">
+                        <li>Putnam (1988). "Diplomacy and Domestic Politics"</li>
+                        <li>Mansfield, Milner y Rosendorff (2002). "Why Democracies Cooperate More"</li>
+                    </ul>
+                </div>
+                <div class="session">
+                    <span class="session-number">20</span>
+                    <div class="session-title">Organismos internacionales como instituciones</div>
+                    <ul class="session-readings">
+                        <li>Abbott y Snidal (1998). "Why States Act through Formal International Organizations"</li>
+                        <li>Béjar y Moraes (2016). "The IMF, Party System Institutionalization and Protest"</li>
+                    </ul>
+                </div>
+                <div class="session">
+                    <span class="session-number">21</span>
+                    <div class="session-title">Burocracias y capacidad de gobierno</div>
+                    <ul class="session-readings">
+                        <li>Weber (1964). <em>Economía y sociedad</em>, selección</li>
+                        <li>Grindle (2012). <em>Jobs for the Boys</em>, cap. 1</li>
+                    </ul>
+                </div>
+                <div class="session">
+                    <span class="session-number">22</span>
+                    <div class="session-title">Cortes, judicialización y control institucional</div>
+                    <ul class="session-readings">
+                        <li>Ferejohn (2002). "Judicializing Politics, Politicizing Law"</li>
+                        <li>Domingo (2005). "Judicialization of Politics" en México</li>
+                    </ul>
+                </div>
+                <div class="session">
+                    <span class="session-number">23</span>
+                    <div class="session-title">Rendición de cuentas subnacional y reelección municipal</div>
+                    <ul class="session-readings">
+                        <li>Klasnja y Titiunik (2017). "The Incumbency Curse"</li>
+                        <li>Ferraz y Finan (2008). "Exposing Corrupt Politicians"</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Module IV -->
+        <div class="module">
+            <div class="module-header" onclick="this.parentElement.classList.toggle('open')">
+                <div style="display: flex; align-items: center;">
+                    <span class="module-number">IV</span>
+                    <span class="module-name">Regímenes políticos y sus tensiones</span>
+                </div>
+                <i class="fas fa-chevron-down module-toggle"></i>
+            </div>
+            <div class="module-sessions">
+                <div class="session">
+                    <span class="session-number">24</span>
+                    <div class="session-title">Concepciones de democracia</div>
+                    <ul class="session-readings">
+                        <li>Dahl (1971). <em>La poliarquía</em>, caps. 1-2</li>
+                        <li>Schmitter y Karl (1991). "What Democracy Is... and Is Not"</li>
+                    </ul>
+                </div>
+                <div class="session">
+                    <span class="session-number">25</span>
+                    <div class="session-title">Presidencialismo y parlamentarismo</div>
+                    <ul class="session-readings">
+                        <li>Linz (1990). "The Perils of Presidentialism"</li>
+                        <li>Mainwaring y Shugart (1997). "Juan Linz, Presidentialism, and Democracy"</li>
+                        <li>Helmke (2017). <em>Institutions on the Edge</em>, cap. 1</li>
+                    </ul>
+                </div>
+                <div class="session">
+                    <span class="session-number">26</span>
+                    <div class="session-title">Autoritarismos y las instituciones que los sostienen</div>
+                    <ul class="session-readings">
+                        <li>Linz (2000). <em>Totalitarian and Authoritarian Regimes</em>, cap. 3</li>
+                        <li>Gandhi y Lust-Okar (2009). "Elections Under Authoritarianism"</li>
+                    </ul>
+                </div>
+                <div class="session">
+                    <span class="session-number">27</span>
+                    <div class="session-title">Erosión democrática — conceptos y mecanismos</div>
+                    <ul class="session-readings">
+                        <li>Bermeo (2016). "On Democratic Backsliding"</li>
+                        <li>Waldner y Lust (2018). "Unwelcome Change"</li>
+                    </ul>
+                </div>
+                <div class="session">
+                    <span class="session-number">28</span>
+                    <div class="session-title">Erosión democrática, populismo y el caso latinoamericano</div>
+                    <ul class="session-readings">
+                        <li>Gamboa (2022). <em>Resisting Backsliding</em>, cap. 1</li>
+                        <li>Mudde y Rovira Kaltwasser (2017). <em>Populism: A Very Short Introduction</em>, cap. 1</li>
+                    </ul>
+                </div>
+                <div class="session">
+                    <span class="session-number">29</span>
+                    <div class="session-title">Polarización afectiva y rendición de cuentas</div>
+                    <ul class="session-readings">
+                        <li>Iyengar et al. (2019). "The Origins and Consequences of Affective Polarization"</li>
+                        <li>Moraes y Béjar (2023). "Electoral Volatility and Political Polarization"</li>
+                    </ul>
+                </div>
+                <div class="session">
+                    <span class="session-number">30</span>
+                    <div class="session-title">Entonces, ¿sirven las instituciones?</div>
+                    <ul class="session-readings">
+                        <li>Przeworski (2019). <em>Crises of Democracy</em>, introducción</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Action bar -->
+        <div class="action-bar">
+            <a href="https://github.com/Sergio-Bejar/instituciones-politicas-i" class="action-btn primary" target="_blank">
+                <i class="fab fa-github"></i> Repositorio del curso
+            </a>
+            <a href="https://github.com/Sergio-Bejar/instituciones-politicas-i/blob/main/programa/programa.pdf" class="action-btn secondary" target="_blank">
+                <i class="fas fa-file-pdf"></i> Programa (PDF)
+            </a>
+            <a href="mailto:sergio.bejar@cide.edu" class="action-btn secondary">
+                <i class="fas fa-envelope"></i> Contacto
+            </a>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="course-footer">
+        <a href="/">Sergio Béjar López</a> · CIDE · División de Estudios Políticos · Otoño 2026
+    </footer>
+
+</body>
+</html>
