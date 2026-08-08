@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Métodos Cuantitativos Aplicados II — Sergio Béjar López</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,800;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --cide: #163D34;
+            --cide-light: #1e5446;
+            --cide-dark: #0f2b25;
+            --gold: #C8A435;
+            --blue: #2a6e8a;
+            --blue-light: #3a8eaa;
+            --blue-glow: rgba(42, 110, 138, 0.08);
+            --white: #ffffff;
+            --off-white: #f9f8f5;
+            --ink: #1a1a1a;
+            --ink-light: #3a3a3a;
+            --ink-muted: #6d6d6d;
+            --border: #e2e0db;
+            --border-light: #eceae5;
+            --serif: 'Playfair Display', 'Georgia', serif;
+            --sans: 'DM Sans', 'Helvetica Neue', sans-serif;
+            --mono: 'JetBrains Mono', monospace;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--sans);
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--ink);
+            background: var(--off-white);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .site-nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            background: var(--cide); border-bottom: 3px solid var(--gold);
+        }
+        .nav-inner {
+            max-width: 1140px; margin: 0 auto; padding: 0 2rem;
+            display: flex; justify-content: space-between; align-items: center; height: 62px;
+        }
+        .nav-brand { font-family: var(--serif); font-size: 1.15rem; font-weight: 700; color: #fff; text-decoration: none; }
+        .nav-back { font-size: 0.82rem; font-weight: 500; color: rgba(255,255,255,0.75); text-decoration: none; padding: 0.45rem 0.9rem; border-radius: 3px; transition: all 0.2s; }
+        .nav-back:hover { color: #fff; background: rgba(255,255,255,0.12); }
+        .nav-back i { margin-right: 0.4rem; }
+
+        .course-hero {
+            background: linear-gradient(135deg, #1a3a4a 0%, #2a6e8a 50%, #3a8eaa 100%);
+            padding: 7rem 2rem 3rem;
+            text-align: center;
+            position: relative; overflow: hidden;
+            margin-top: -1px;
+        }
+        .course-hero::after {
+            content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 5px;
+            background: linear-gradient(90deg, var(--gold), var(--blue), var(--gold));
+        }
+        .hero-inner { max-width: 860px; margin: 0 auto; }
+        .course-logo-text {
+            font-family: var(--sans); font-size: 2rem; font-weight: 300;
+            letter-spacing: 0.2em; color: rgba(255,255,255,0.9); text-transform: uppercase; line-height: 1.4;
+        }
+        .course-logo-accent { display: block; width: 44px; height: 4px; background: var(--gold); margin: 0.6rem auto 0.4rem; border-radius: 1px; }
+        .course-logo-numeral { font-family: var(--sans); font-size: 1.4rem; font-weight: 700; letter-spacing: 0.2em; color: var(--gold); }
+        .course-meta { font-size: 0.9rem; color: rgba(255,255,255,0.55); margin-top: 1.25rem; }
+        .course-meta strong { color: rgba(255,255,255,0.8); }
+        .archive-badge {
+            display: inline-block; margin-top: 1rem; font-size: 0.72rem; font-weight: 600;
+            letter-spacing: 0.08em; text-transform: uppercase; padding: 0.35rem 1rem;
+            background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.7); border-radius: 3px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .content { max-width: 860px; margin: 0 auto; padding: 3rem 2rem; }
+        .course-description { font-size: 1rem; color: var(--ink-light); line-height: 1.85; margin-bottom: 2.5rem; }
+
+        .section-header { display: flex; align-items: center; gap: 1.25rem; margin-bottom: 1.5rem; margin-top: 2rem; }
+        .section-title { font-family: var(--serif); font-size: 1.4rem; font-weight: 700; color: var(--blue); }
+        .section-line { flex: 1; height: 2px; background: linear-gradient(90deg, var(--blue), transparent); opacity: 0.2; }
+
+        .resource-group { margin-bottom: 1.5rem; }
+        .resource-group h3 {
+            font-family: var(--serif); font-size: 1.05rem; font-weight: 700; color: var(--ink);
+            margin-bottom: 0.75rem; padding-bottom: 0.4rem; border-bottom: 2px solid var(--gold); display: inline-block;
+        }
+
+        .resource-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; margin-bottom: 1.5rem; }
+        .resource-table th {
+            text-align: left; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.06em;
+            text-transform: uppercase; color: var(--ink-muted); padding: 0.5rem 0.75rem;
+            border-bottom: 2px solid var(--border);
+        }
+        .resource-table td { padding: 0.6rem 0.75rem; border-bottom: 1px solid var(--border-light); color: var(--ink-light); }
+        .resource-table tr:last-child td { border-bottom: none; }
+        .resource-table a { color: var(--blue); text-decoration: none; font-weight: 500; }
+        .resource-table a:hover { color: var(--cide); text-decoration: underline; }
+
+        .tag {
+            display: inline-block; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.04em;
+            text-transform: uppercase; padding: 0.15rem 0.5rem; border-radius: 2px; margin-left: 0.4rem;
+        }
+        .tag-pdf { background: #fde8e8; color: #c0392b; }
+        .tag-r { background: #e3f0e8; color: #163D34; }
+        .tag-rpubs { background: var(--blue-glow); color: var(--blue); }
+
+        .books-list { list-style: none; font-size: 0.9rem; color: var(--ink-light); line-height: 2; }
+        .books-list li { padding-left: 1.2rem; position: relative; }
+        .books-list li::before { content: '–'; position: absolute; left: 0; color: var(--gold); font-weight: 700; }
+
+        .action-bar { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid var(--border-light); }
+        .action-btn {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            font-family: var(--sans); font-size: 0.88rem; font-weight: 600;
+            text-decoration: none; padding: 0.75rem 1.5rem; border-radius: 4px; transition: all 0.2s;
+        }
+        .action-btn.primary { background: var(--blue); color: #fff; border: 2px solid var(--blue); }
+        .action-btn.primary:hover { background: var(--blue-light); border-color: var(--blue-light); }
+        .action-btn.secondary { background: transparent; color: var(--blue); border: 2px solid var(--border); }
+        .action-btn.secondary:hover { border-color: var(--blue); background: var(--blue-glow); }
+
+        .course-footer { background: var(--cide-dark); color: rgba(255,255,255,0.5); text-align: center; padding: 2rem; font-size: 0.82rem; }
+        .course-footer a { color: var(--gold); text-decoration: none; }
+        .course-footer a:hover { color: #fff; }
+
+        @media (max-width: 768px) {
+            .course-hero { padding: 100px 1.5rem 2.5rem; }
+            .course-logo-text { font-size: 1.4rem; letter-spacing: 0.12em; }
+            .action-bar { flex-direction: column; align-items: stretch; }
+            .action-btn { justify-content: center; }
+            .resource-table { font-size: 0.82rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="site-nav">
+        <div class="nav-inner">
+            <a href="/" class="nav-brand">Sergio Béjar López</a>
+            <a href="/#teaching" class="nav-back"><i class="fas fa-arrow-left"></i> Regresar al sitio</a>
+        </div>
+    </nav>
+
+    <section class="course-hero">
+        <div class="hero-inner">
+            <div class="course-logo-text">MÉTODOS CUANTITATIVOS<br>APLICADOS</div>
+            <div class="course-logo-accent"></div>
+            <div class="course-logo-numeral">II</div>
+            <div class="course-meta">
+                <strong>CIDE</strong> · Licenciatura en Ciencia Política y Relaciones Internacionales · <strong>Primavera 2024</strong>
+            </div>
+            <div class="archive-badge">Archivo de recursos</div>
+        </div>
+    </section>
+
+    <main class="content">
+
+        <div class="course-description">
+            <p>Este curso de inferencia estadística y modelado lo impartí en el CIDE durante el semestre de primavera 2024. Cubre desde probabilidad y distribuciones hasta regresión lineal, diagnósticos y modelos de máxima verosimilitud (logit, probit, Poisson), todo con aplicaciones en R. Los materiales quedan disponibles como recurso abierto para quien los necesite.</p>
+        </div>
+
+        <!-- Probabilidad e inferencia -->
+        <div class="section-header">
+            <h2 class="section-title">Probabilidad e inferencia estadística</h2>
+            <div class="section-line"></div>
+        </div>
+
+        <table class="resource-table">
+            <thead>
+                <tr><th>Tema</th><th>Recursos</th></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Repaso de probabilidad</td>
+                    <td><a href="https://github.com/Sergio-Bejar/MCA_CIDE/blob/main/Presentaciones/probabilidad_repaso.pdf">Presentación</a> <span class="tag tag-pdf">PDF</span></td>
+                </tr>
+                <tr>
+                    <td>Distribuciones de probabilidad</td>
+                    <td>
+                        <a href="https://github.com/Sergio-Bejar/MCA_CIDE/blob/main/Presentaciones/distribuciones_probabilidad.pdf">Presentación</a> <span class="tag tag-pdf">PDF</span><br>
+                        <a href="https://github.com/Sergio-Bejar/MCA_CIDE/blob/main/Scripts/script1.R">Script</a> <span class="tag tag-r">R</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Muestreo aleatorio</td>
+                    <td>
+                        <a href="https://github.com/Sergio-Bejar/MCA_CIDE/blob/main/Presentaciones/muestreo_aleatorio.pdf">Presentación</a> <span class="tag tag-pdf">PDF</span><br>
+                        <a href="https://github.com/Sergio-Bejar/MCA_CIDE/blob/main/Scripts/Script2.R">Script</a> <span class="tag tag-r">R</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>TLC e intervalos de confianza</td>
+                    <td><a href="https://github.com/Sergio-Bejar/MCA_CIDE/blob/main/Presentaciones/tlc_int_conf_ph1.pdf">Presentación</a> <span class="tag tag-pdf">PDF</span></td>
+                </tr>
+                <tr>
+                    <td>Pruebas de hipótesis</td>
+                    <td>
+                        <a href="https://github.com/Sergio-Bejar/MCA_CIDE/blob/main/Presentaciones/pruebas_hipotesis.pdf">Presentación</a> <span class="tag tag-pdf">PDF</span><br>
+                        <a href="https://github.com/Sergio-Bejar/MCA_CIDE/blob/main/Scripts/modhipo.R">Script</a> <span class="tag tag-r">R</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="resource-group">
+            <h3>Laboratorios</h3>
+            <table class="resource-table">
+                <tbody>
+                    <tr>
+                        <td>Lab 1 — Probabilidad</td>
+                        <td><a href="https://github.com/Sergio-Bejar/MCA_CIDE/blob/main/Laboratorios/lab1.pdf">Enunciado</a> · <a href="https://github.com/Sergio-Bejar/MCA_CIDE/blob/main/Laboratorios/sol_lab1.pdf">Soluciones</a></td>
+                    </tr>
+                    <tr>
+                        <td>Lab 2 — Inferencia</td>
+                        <td><a href="https://github.com/Sergio-Bejar/MCA_CIDE/blob/main/Laboratorios/lab2.pdf">Enunciado</a> · <a href="https://github.com/Sergio-Bejar/MCA_CIDE/blob/main/Laboratorios/sol_lab2.pdf">Soluciones</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Regresión lineal -->
+        <div class="section-header">
+            <h2 class="section-title">Regresión lineal</h2>
+            <div class="section-line"></div>
+        </div>
+
+        <table class="resource-table">
+            <thead>
+                <tr><th>Tema</th><th>Recursos</th></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Correlación y regresión lineal simple</td>
+                    <td><a href="https://github.com/Sergio-Bejar/MCA_CIDE/blob/main/Presentaciones/corr_reg_update.pdf">Presentación</a> <span class="tag tag-pdf">PDF</span></td>
+                </tr>
+                <tr>
+                    <td>Diagnósticos OLS</td>
+                    <td><a href="https://github.com/Sergio-Bejar/MCA_CIDE/blob/main/Presentaciones/supuestos_OLS.pdf">Presentación</a> <span class="tag tag-pdf">PDF</span></td>
+                </tr>
+                <tr>
+                    <td>OLS bivariado — ejemplo práctico</td>
+                    <td><a href="https://rpubs.com/bebejar/1173603">RPubs</a> <span class="tag tag-rpubs">RPubs</span></td>
+                </tr>
+                <tr>
+                    <td>Extensiones a regresión bivariada</td>
+                    <td><a href="https://github.com/Sergio-Bejar/MCA_CIDE/blob/main/Presentaciones/extension_OLS.pdf">Presentación</a> <span class="tag tag-pdf">PDF</span></td>
+                </tr>
+                <tr>
+                    <td>Regresión múltiple e interacciones</td>
+                    <td>
+                        <a href="https://github.com/Sergio-Bejar/MCA_CIDE/blob/main/Presentaciones/extension_regbiv_completa.pdf">Presentación</a> <span class="tag tag-pdf">PDF</span><br>
+                        <a href="https://rpubs.com/bebejar/1177751">Ejemplos interacciones</a> <span class="tag tag-rpubs">RPubs</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="resource-group">
+            <h3>Laboratorios</h3>
+            <table class="resource-table">
+                <tbody>
+                    <tr>
+                        <td>Lab 3 — Regresión y diagnósticos</td>
+                        <td><a href="https://github.com/Sergio-Bejar/MCA_CIDE/blob/main/Laboratorios/lab3.pdf">Enunciado</a></td>
+                    </tr>
+                    <tr>
+                        <td>Lab 4 — Regresión múltiple</td>
+                        <td><a href="https://github.com/Sergio-Bejar/MCA_CIDE/blob/main/Laboratorios/lab4.pdf">Enunciado</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- MLE -->
+        <div class="section-header">
+            <h2 class="section-title">Modelos de máxima verosimilitud</h2>
+            <div class="section-line"></div>
+        </div>
+
+        <table class="resource-table">
+            <thead>
+                <tr><th>Tema</th><th>Recursos</th></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Logit</td>
+                    <td>
+                        <a href="https://github.com/Sergio-Bejar/MCA_CIDE/blob/main/Presentaciones/logit.pdf">Presentación 1</a> · <a href="https://github.com/Sergio-Bejar/MCA_CIDE/blob/main/Presentaciones/logit1.pdf">Presentación 2</a> <span class="tag tag-pdf">PDF</span><br>
+                        <a href="https://rpubs.com/bebejar/1185212">Ejemplos</a> <span class="tag tag-rpubs">RPubs</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Probit y Ordered MLE</td>
+                    <td>
+                        <a href="https://rpubs.com/bebejar/1187461">Probit</a> · <a href="https://rpubs.com/bebejar/1187520">Ordered</a> <span class="tag tag-rpubs">RPubs</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Modelos de conteo (Poisson)</td>
+                    <td><a href="https://rpubs.com/bebejar/1189387">RPubs</a> <span class="tag tag-rpubs">RPubs</span></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="resource-group">
+            <h3>Laboratorios</h3>
+            <table class="resource-table">
+                <tbody>
+                    <tr>
+                        <td>Lab 5 — Logit</td>
+                        <td><a href="https://github.com/Sergio-Bejar/MCA_CIDE/blob/main/Laboratorios/lab5.pdf">Enunciado</a> · <a href="https://github.com/Sergio-Bejar/MCA_CIDE/blob/main/Laboratorios/lab5%20(1).pdf">Soluciones</a></td>
+                    </tr>
+                    <tr>
+                        <td>Lab 6 — Conteo</td>
+                        <td><a href="https://github.com/Sergio-Bejar/MCA_CIDE/blob/main/Laboratorios/lab6.pdf">Enunciado</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Exámenes -->
+        <div class="section-header">
+            <h2 class="section-title">Exámenes</h2>
+            <div class="section-line"></div>
+        </div>
+
+        <table class="resource-table">
+            <thead>
+                <tr><th>Examen</th><th>Enunciado</th><th>Soluciones</th></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Examen 1 — Probabilidad e inferencia</td>
+                    <td><a href="https://github.com/Sergio-Bejar/MCA_CIDE/blob/main/Examen/examen1.qmd">Quarto</a></td>
+                    <td><a href="https://github.com/Sergio-Bejar/MCA_CIDE/blob/main/Examen/examen1_solucion.pdf">PDF</a></td>
+                </tr>
+                <tr>
+                    <td>Examen 2 — Regresión</td>
+                    <td><a href="https://github.com/Sergio-Bejar/MCA_CIDE/blob/main/Examen/examen2.pdf">PDF</a></td>
+                    <td><a href="https://github.com/Sergio-Bejar/MCA_CIDE/blob/main/Examen/examen2%20(1).pdf">PDF</a></td>
+                </tr>
+                <tr>
+                    <td>Examen 3 — MLE</td>
+                    <td><a href="https://github.com/Sergio-Bejar/MCA_CIDE/blob/main/Examen/exam3.pdf">PDF</a></td>
+                    <td>—</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Textos -->
+        <div class="section-header">
+            <h2 class="section-title">Textos recomendados</h2>
+            <div class="section-line"></div>
+        </div>
+
+        <ul class="books-list">
+            <li>Agresti (2018). <em>Statistical Methods for the Social Sciences</em></li>
+            <li>Diez, Barr y Çetinkaya-Rundel (2017). <em>OpenIntro Statistics</em></li>
+            <li>Grolemund y Wickham (2023). <em>R for Data Science</em>, 2a ed.</li>
+            <li>Ismay y Kim (2018). <em>Modern Dive: Intro to Statistical & Data Sciences via R</em></li>
+        </ul>
+
+        <!-- Action bar -->
+        <div class="action-bar">
+            <a href="https://github.com/Sergio-Bejar/MCA_CIDE" class="action-btn primary" target="_blank">
+                <i class="fab fa-github"></i> Repositorio completo
+            </a>
+            <a href="https://github.com/Sergio-Bejar/MCA_CIDE/blob/main/temario/MCA24_CIDE.pdf" class="action-btn secondary" target="_blank">
+                <i class="fas fa-file-pdf"></i> Temario original
+            </a>
+            <a href="mailto:sergio.bejar@cide.edu" class="action-btn secondary">
+                <i class="fas fa-envelope"></i> Contacto
+            </a>
+        </div>
+
+    </main>
+
+    <footer class="course-footer">
+        <a href="/">Sergio Béjar López</a> · CIDE · División de Estudios Políticos
+    </footer>
+
+</body>
+</html>
