@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inferencia Causal para Evaluación de Proyectos — Sergio Béjar López</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,800;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --cide: #163D34; --cide-dark: #0f2b25; --gold: #C8A435;
+            --amber: #8a6b2a; --amber-light: #a8842e; --amber-glow: rgba(138, 107, 42, 0.08);
+            --white: #ffffff; --off-white: #f9f8f5; --ink: #1a1a1a;
+            --ink-light: #3a3a3a; --ink-muted: #6d6d6d; --border: #e2e0db; --border-light: #eceae5;
+            --serif: 'Playfair Display', 'Georgia', serif;
+            --sans: 'DM Sans', 'Helvetica Neue', sans-serif;
+            --mono: 'JetBrains Mono', monospace;
+        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--sans); font-size: 16px; line-height: 1.7; color: var(--ink); background: var(--off-white); -webkit-font-smoothing: antialiased; }
+
+        .site-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: var(--cide); border-bottom: 3px solid var(--gold); }
+        .nav-inner { max-width: 1140px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; height: 62px; }
+        .nav-brand { font-family: var(--serif); font-size: 1.15rem; font-weight: 700; color: #fff; text-decoration: none; }
+        .nav-back { font-size: 0.82rem; font-weight: 500; color: rgba(255,255,255,0.75); text-decoration: none; padding: 0.45rem 0.9rem; border-radius: 3px; transition: all 0.2s; }
+        .nav-back:hover { color: #fff; background: rgba(255,255,255,0.12); }
+        .nav-back i { margin-right: 0.4rem; }
+
+        .course-hero {
+            background: linear-gradient(135deg, #3d2e10 0%, #6b4f1a 40%, #8a6b2a 100%);
+            padding: 7rem 2rem 3rem; text-align: center; position: relative; overflow: hidden; margin-top: -1px;
+        }
+        .course-hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 5px; background: linear-gradient(90deg, var(--gold), var(--amber), var(--gold)); }
+        .hero-inner { max-width: 860px; margin: 0 auto; }
+        .course-logo-text { font-family: var(--sans); font-size: 1.7rem; font-weight: 300; letter-spacing: 0.15em; color: rgba(255,255,255,0.9); text-transform: uppercase; line-height: 1.4; }
+        .course-logo-accent { display: block; width: 64px; height: 4px; background: var(--gold); margin: 0.6rem auto 0.4rem; border-radius: 1px; }
+        .course-logo-sub { font-family: var(--sans); font-size: 0.85rem; font-weight: 600; letter-spacing: 0.15em; color: var(--gold); text-transform: uppercase; }
+        .course-meta { font-size: 0.9rem; color: rgba(255,255,255,0.55); margin-top: 1rem; }
+        .course-meta strong { color: rgba(255,255,255,0.8); }
+        .archive-badge { display: inline-block; margin-top: 1rem; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.35rem 1rem; background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.7); border-radius: 3px; border: 1px solid rgba(255,255,255,0.2); }
+
+        .content { max-width: 860px; margin: 0 auto; padding: 3rem 2rem; }
+        .course-description { font-size: 1rem; color: var(--ink-light); line-height: 1.85; margin-bottom: 2.5rem; }
+
+        .clase { margin-bottom: 2.5rem; border: 1px solid var(--border); border-radius: 4px; background: var(--white); overflow: hidden; }
+        .clase-header { padding: 1.25rem 1.5rem; border-bottom: 1px solid var(--border-light); }
+        .clase-number { font-family: var(--mono); font-size: 0.72rem; color: var(--white); background: var(--amber); padding: 0.2rem 0.55rem; border-radius: 2px; margin-right: 0.75rem; }
+        .clase-title { font-family: var(--serif); font-size: 1.1rem; font-weight: 700; color: var(--ink); }
+        .clase-desc { padding: 1rem 1.5rem; font-size: 0.9rem; color: var(--ink-muted); border-bottom: 1px solid var(--border-light); }
+        .clase-resources { padding: 0; list-style: none; }
+        .clase-resources li { padding: 0.6rem 1.5rem; border-bottom: 1px solid var(--border-light); font-size: 0.88rem; display: flex; align-items: center; gap: 0.6rem; }
+        .clase-resources li:last-child { border-bottom: none; }
+        .clase-resources a { color: var(--amber); text-decoration: none; font-weight: 500; }
+        .clase-resources a:hover { color: var(--cide); text-decoration: underline; }
+        .tag { display: inline-block; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; padding: 0.12rem 0.45rem; border-radius: 2px; }
+        .tag-pdf { background: #fde8e8; color: #c0392b; }
+        .tag-r { background: #e3f0e8; color: #163D34; }
+        .tag-csv { background: #eee8fd; color: #5b3a9e; }
+
+        .section-header { display: flex; align-items: center; gap: 1.25rem; margin-bottom: 1.5rem; margin-top: 2.5rem; }
+        .section-title { font-family: var(--serif); font-size: 1.4rem; font-weight: 700; color: var(--amber); }
+        .section-line { flex: 1; height: 2px; background: linear-gradient(90deg, var(--amber), transparent); opacity: 0.2; }
+
+        .data-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+        .data-table th { text-align: left; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-muted); padding: 0.5rem 0.75rem; border-bottom: 2px solid var(--border); }
+        .data-table td { padding: 0.5rem 0.75rem; border-bottom: 1px solid var(--border-light); color: var(--ink-light); }
+        .data-table a { color: var(--amber); text-decoration: none; font-weight: 500; }
+        .data-table a:hover { color: var(--cide); }
+
+        .packages { font-family: var(--mono); font-size: 0.85rem; color: var(--ink-muted); margin-top: 1rem; }
+
+        .action-bar { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid var(--border-light); }
+        .action-btn { display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--sans); font-size: 0.88rem; font-weight: 600; text-decoration: none; padding: 0.75rem 1.5rem; border-radius: 4px; transition: all 0.2s; }
+        .action-btn.primary { background: var(--amber); color: #fff; border: 2px solid var(--amber); }
+        .action-btn.primary:hover { background: var(--amber-light); border-color: var(--amber-light); }
+        .action-btn.secondary { background: transparent; color: var(--amber); border: 2px solid var(--border); }
+        .action-btn.secondary:hover { border-color: var(--amber); background: var(--amber-glow); }
+
+        .course-footer { background: var(--cide-dark); color: rgba(255,255,255,0.5); text-align: center; padding: 2rem; font-size: 0.82rem; }
+        .course-footer a { color: var(--gold); text-decoration: none; }
+
+        @media (max-width: 768px) {
+            .course-hero { padding: 100px 1.5rem 2.5rem; }
+            .course-logo-text { font-size: 1.3rem; }
+            .action-bar { flex-direction: column; align-items: stretch; }
+            .action-btn { justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="site-nav">
+        <div class="nav-inner">
+            <a href="/" class="nav-brand">Sergio Béjar López</a>
+            <a href="/#teaching" class="nav-back"><i class="fas fa-arrow-left"></i> Regresar al sitio</a>
+        </div>
+    </nav>
+
+    <section class="course-hero">
+        <div class="hero-inner">
+            <div class="course-logo-text">INFERENCIA CAUSAL PARA<br>EVALUACIÓN DE PROYECTOS</div>
+            <div class="course-logo-accent"></div>
+            <div class="course-logo-sub">Escuela de Métodos · CIDE</div>
+            <div class="course-meta">
+                <strong>Primavera 2026</strong> · Curso corto de extensión · 4 sesiones · R
+            </div>
+            <div class="archive-badge">Archivo de recursos</div>
+        </div>
+    </section>
+
+    <main class="content">
+
+        <div class="course-description">
+            <p>Curso corto sobre inferencia causal aplicada a la evaluación de proyectos y políticas públicas, impartido en la Escuela de Métodos del CIDE en primavera 2026. Cubre desde la lógica de la aleatorización hasta regresión discontinua, pasando por matching y diferencia en diferencias. Todo con código en R y ejemplos de política pública mexicana (Seguro Popular, Becas Benito Juárez). Los materiales quedan abiertos para quien los necesite.</p>
+        </div>
+
+        <!-- Clase 1 -->
+        <div class="clase">
+            <div class="clase-header">
+                <span class="clase-number">1</span>
+                <span class="clase-title">Aleatorización y el problema fundamental de la inferencia causal</span>
+            </div>
+            <div class="clase-desc">Por qué funciona la asignación aleatoria. Simulación del marco de resultados potenciales, sesgo de selección y verificación de balance.</div>
+            <ul class="clase-resources">
+                <li><a href="https://github.com/Sergio-Bejar/Evaluacion_EM_CIDE/blob/main/scripts/ejemplo1_EM_Bejar.R">Script: simulación de aleatorización</a> <span class="tag tag-r">R</span></li>
+                <li><a href="https://github.com/Sergio-Bejar/Evaluacion_EM_CIDE/blob/main/village_randomized.csv">Datos: village_randomized.csv</a> <span class="tag tag-csv">CSV</span></li>
+                <li><a href="https://github.com/Sergio-Bejar/Evaluacion_EM_CIDE/blob/main/tutoring_program.csv">Datos: tutoring_program.csv</a> <span class="tag tag-csv">CSV</span></li>
+            </ul>
+        </div>
+
+        <!-- Clase 2 -->
+        <div class="clase">
+            <div class="clase-header">
+                <span class="clase-number">2</span>
+                <span class="clase-title">Propensity Score Matching</span>
+            </div>
+            <div class="clase-desc">Cuando no hay experimento. Propensity scores, algoritmos de matching, balance y sensibilidad. Ejemplo: efecto de becas educativas sobre deserción.</div>
+            <ul class="clase-resources">
+                <li><a href="https://github.com/Sergio-Bejar/Evaluacion_EM_CIDE/blob/main/Presentaciones/matching_compacto.pdf">Presentación: matching</a> <span class="tag tag-pdf">PDF</span></li>
+                <li><a href="https://github.com/Sergio-Bejar/Evaluacion_EM_CIDE/blob/main/scripts/ejemplo2_EM_Bejar.R">Script: matching completo</a> <span class="tag tag-r">R</span></li>
+                <li><a href="https://github.com/Sergio-Bejar/Evaluacion_EM_CIDE/blob/main/datos/datos_becas_educativas.csv">Datos: becas educativas (2,001 obs.)</a> <span class="tag tag-csv">CSV</span></li>
+            </ul>
+        </div>
+
+        <!-- Clase 3 -->
+        <div class="clase">
+            <div class="clase-header">
+                <span class="clase-number">3</span>
+                <span class="clase-title">Diferencia en diferencias</span>
+            </div>
+            <div class="clase-desc">El Seguro Popular como caso de estudio. Intuición de DiD, tendencias paralelas, event studies y limitaciones. Incluye ejercicio con soluciones.</div>
+            <ul class="clase-resources">
+                <li><a href="https://github.com/Sergio-Bejar/Evaluacion_EM_CIDE/blob/main/clase3_did.pdf">Presentación: DiD</a> <span class="tag tag-pdf">PDF</span></li>
+                <li><a href="https://github.com/Sergio-Bejar/Evaluacion_EM_CIDE/blob/main/scripts/clase3_ejercicio_did.R">Ejercicio práctico</a> <span class="tag tag-r">R</span></li>
+                <li><a href="https://github.com/Sergio-Bejar/Evaluacion_EM_CIDE/blob/main/scripts/clase3_ejercicio_solucion.R">Soluciones</a> <span class="tag tag-r">R</span></li>
+            </ul>
+        </div>
+
+        <!-- Clase 4 -->
+        <div class="clase">
+            <div class="clase-header">
+                <span class="clase-number">4</span>
+                <span class="clase-title">Regresión discontinua</span>
+            </div>
+            <div class="clase-desc">Becas Benito Juárez y el corte de 700 puntos. Intuición de RDD, continuidad, estimación en ventana local y validación del diseño.</div>
+            <ul class="clase-resources">
+                <li><a href="https://github.com/Sergio-Bejar/Evaluacion_EM_CIDE/blob/main/Presentaciones/clase4_rdd.pdf">Presentación: RDD</a> <span class="tag tag-pdf">PDF</span></li>
+                <li><a href="https://github.com/Sergio-Bejar/Evaluacion_EM_CIDE/blob/main/scripts/clase4_rdd_analisis.R">Script: análisis RDD</a> <span class="tag tag-r">R</span></li>
+                <li><a href="https://github.com/Sergio-Bejar/Evaluacion_EM_CIDE/blob/main/datos/datos_rdd_becas.csv">Datos: becas RDD (1,001 obs.)</a> <span class="tag tag-csv">CSV</span></li>
+            </ul>
+        </div>
+
+        <!-- Datos adicionales -->
+        <div class="section-header">
+            <h2 class="section-title">Datos adicionales</h2>
+            <div class="section-line"></div>
+        </div>
+
+        <table class="data-table">
+            <thead><tr><th>Archivo</th><th>Obs.</th><th>Tema</th></tr></thead>
+            <tbody>
+                <tr><td><a href="https://github.com/Sergio-Bejar/Evaluacion_EM_CIDE/blob/main/injury.csv">injury.csv</a></td><td>7,151</td><td>Compensación laboral</td></tr>
+                <tr><td><a href="https://github.com/Sergio-Bejar/Evaluacion_EM_CIDE/blob/main/mosquito_nets.csv">mosquito_nets.csv</a></td><td>1,753</td><td>Prevención de malaria</td></tr>
+                <tr><td><a href="https://github.com/Sergio-Bejar/Evaluacion_EM_CIDE/blob/main/public_private_earnings.csv">public_private_earnings.csv</a></td><td>10</td><td>Retornos educativos</td></tr>
+                <tr><td><a href="https://github.com/Sergio-Bejar/Evaluacion_EM_CIDE/blob/main/world_happiness.csv">world_happiness.csv</a></td><td>218</td><td>Desarrollo y bienestar</td></tr>
+            </tbody>
+        </table>
+
+        <p class="packages" style="margin-top: 2rem;"><strong>Paquetes de R:</strong> tidyverse · MatchIt · cobalt · optmatch · rbounds</p>
+
+        <div class="action-bar">
+            <a href="https://github.com/Sergio-Bejar/Evaluacion_EM_CIDE" class="action-btn primary" target="_blank">
+                <i class="fab fa-github"></i> Repositorio completo
+            </a>
+            <a href="mailto:sergio.bejar@cide.edu" class="action-btn secondary">
+                <i class="fas fa-envelope"></i> Contacto
+            </a>
+        </div>
+
+    </main>
+
+    <footer class="course-footer">
+        <a href="/">Sergio Béjar López</a> · CIDE · Escuela de Métodos · Primavera 2026
+    </footer>
+
+</body>
+</html>
