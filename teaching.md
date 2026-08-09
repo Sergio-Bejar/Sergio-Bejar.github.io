@@ -4,7 +4,7 @@ title: Teaching
 permalink: /teaching/
 ---
 
-This page is the directory of all the classes that I have thaught. Materials are free to current students, alumni of my classes, or any other interested observers.  
+This page is the directory of all the classes that I have taught. Materials are free to current students, alumni of my classes, or any other interested observers.  
 
 ## Course Directory
 
