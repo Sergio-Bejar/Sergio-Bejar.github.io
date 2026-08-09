@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diseño de Investigación I — Sergio Béjar López</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,800;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --navy: #1a1a2e;
+            --navy-light: #2a2a4e;
+            --navy-dark: #0e0e1a;
+            --navy-glow: rgba(26, 26, 46, 0.08);
+            --orange: #c45b28;
+            --orange-light: #d4703f;
+            --gold: #e8a838;
+            --gold-soft: #fdf6e0;
+            --white: #ffffff;
+            --off-white: #f9f8f5;
+            --ink: #1a1a1a;
+            --ink-light: #3a3a3a;
+            --ink-muted: #6d6d6d;
+            --border: #e2e0db;
+            --border-light: #eceae5;
+            --serif: 'Playfair Display', 'Georgia', serif;
+            --sans: 'DM Sans', 'Helvetica Neue', sans-serif;
+            --mono: 'JetBrains Mono', monospace;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--sans);
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--ink);
+            background: var(--off-white);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ── Navigation ── */
+        .site-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: var(--navy);
+            border-bottom: 3px solid var(--gold);
+        }
+
+        .nav-inner {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 62px;
+        }
+
+        .nav-brand {
+            font-family: var(--serif);
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .nav-back {
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: rgba(255,255,255,0.75);
+            text-decoration: none;
+            letter-spacing: 0.04em;
+            padding: 0.45rem 0.9rem;
+            border-radius: 3px;
+            transition: all 0.2s;
+        }
+
+        .nav-back:hover {
+            color: #fff;
+            background: rgba(255,255,255,0.12);
+        }
+
+        .nav-back i { margin-right: 0.4rem; }
+
+        /* ── Hero ── */
+        .course-hero {
+            background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 50%, var(--navy-light) 100%);
+            padding: 120px 2rem 3.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .course-hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, var(--orange), var(--gold), var(--orange));
+        }
+
+        .hero-inner {
+            max-width: 860px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .course-logo-text {
+            font-family: var(--sans);
+            font-size: 2rem;
+            font-weight: 300;
+            letter-spacing: 0.2em;
+            color: rgba(255,255,255,0.9);
+            text-transform: uppercase;
+            line-height: 1.4;
+        }
+
+        .course-logo-accent {
+            display: block;
+            width: 64px;
+            height: 4px;
+            background: var(--orange);
+            margin: 0.6rem auto 0.4rem;
+            border-radius: 1px;
+        }
+
+        .course-logo-numeral {
+            font-family: var(--sans);
+            font-size: 1.6rem;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            color: var(--orange);
+        }
+
+        .course-meta {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.6);
+            margin-top: 1.25rem;
+        }
+
+        .course-meta strong { color: rgba(255,255,255,0.85); font-weight: 600; }
+
+        /* ── Content ── */
+        .content {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 3.5rem 2rem;
+        }
+
+        .course-description {
+            font-size: 1.02rem;
+            color: var(--ink-light);
+            line-height: 1.85;
+            margin-bottom: 2.5rem;
+        }
+
+        .course-description p { margin-bottom: 1.25rem; }
+        .course-description p:last-child { margin-bottom: 0; }
+
+        .course-question {
+            background: var(--navy-glow);
+            border-left: 4px solid var(--navy);
+            padding: 1.5rem 2rem;
+            margin-bottom: 3rem;
+            font-size: 0.95rem;
+            color: var(--ink-light);
+            line-height: 1.8;
+        }
+
+        .course-question strong {
+            display: block;
+            font-family: var(--serif);
+            font-size: 1rem;
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+        }
+
+        /* ── Modules ── */
+        .modules-header {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            margin-bottom: 2rem;
+        }
+
+        .modules-title {
+            font-family: var(--serif);
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--navy);
+        }
+
+        .modules-line {
+            flex: 1;
+            height: 2px;
+            background: linear-gradient(90deg, var(--navy), transparent);
+            opacity: 0.2;
+        }
+
+        .module {
+            margin-bottom: 1.25rem;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            background: var(--white);
+            overflow: hidden;
+        }
+
+        .module-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.25rem 1.5rem;
+            cursor: pointer;
+            transition: background 0.2s;
+            user-select: none;
+        }
+
+        .module-header:hover { background: var(--navy-glow); }
+
+        .module-number {
+            font-family: var(--mono);
+            font-size: 0.75rem;
+            font-weight: 400;
+            color: var(--white);
+            background: var(--navy);
+            padding: 0.2rem 0.55rem;
+            border-radius: 2px;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+
+        .module-name {
+            font-family: var(--serif);
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--ink);
+            flex: 1;
+        }
+
+        .module-toggle {
+            font-size: 0.85rem;
+            color: var(--ink-muted);
+            transition: transform 0.3s;
+            flex-shrink: 0;
+            margin-left: 1rem;
+        }
+
+        .module.open .module-toggle { transform: rotate(180deg); }
+
+        .module-sessions {
+            display: none;
+            border-top: 1px solid var(--border-light);
+        }
+
+        .module.open .module-sessions { display: block; }
+
+        .session {
+            padding: 0.9rem 1.5rem 0.9rem 3.5rem;
+            border-bottom: 1px solid var(--border-light);
+            font-size: 0.9rem;
+            color: var(--ink-light);
+            position: relative;
+        }
+
+        .session:last-child { border-bottom: none; }
+
+        .session-number {
+            position: absolute;
+            left: 1.5rem;
+            font-family: var(--mono);
+            font-size: 0.78rem;
+            color: var(--ink-muted);
+        }
+
+        .session-title {
+            font-weight: 500;
+            color: var(--ink);
+        }
+
+        .session-readings {
+            margin-top: 0.4rem;
+            font-size: 0.82rem;
+            color: var(--ink-muted);
+            line-height: 1.65;
+        }
+
+        .session-readings li {
+            margin-bottom: 0.2rem;
+            list-style: none;
+            padding-left: 0.8rem;
+            position: relative;
+        }
+
+        .session-readings li::before {
+            content: '–';
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+        }
+
+        .session-hint {
+            margin-top: 0.3rem;
+            font-size: 0.8rem;
+            color: #8a7a5a;
+            font-style: italic;
+        }
+
+        .session.parcial .session-title {
+            color: var(--orange);
+            font-weight: 600;
+        }
+
+        .session.entrega .session-hint {
+            color: var(--orange);
+            font-style: normal;
+            font-weight: 500;
+        }
+
+        /* ── Action bar ── */
+        .action-bar {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 3rem;
+            padding-top: 2.5rem;
+            border-top: 1px solid var(--border-light);
+        }
+
+        .action-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: var(--sans);
+            font-size: 0.88rem;
+            font-weight: 600;
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            transition: all 0.2s;
+        }
+
+        .action-btn.primary {
+            background: var(--navy);
+            color: #fff;
+            border: 2px solid var(--navy);
+        }
+
+        .action-btn.primary:hover {
+            background: var(--navy-light);
+            border-color: var(--navy-light);
+        }
+
+        .action-btn.secondary {
+            background: transparent;
+            color: var(--navy);
+            border: 2px solid var(--border);
+        }
+
+        .action-btn.secondary:hover {
+            border-color: var(--navy);
+            background: var(--navy-glow);
+        }
+
+        .action-btn i { font-size: 1rem; }
+
+        /* ── Footer ── */
+        .course-footer {
+            background: var(--navy-dark);
+            color: rgba(255,255,255,0.5);
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.82rem;
+        }
+
+        .course-footer a {
+            color: var(--gold);
+            text-decoration: none;
+        }
+
+        .course-footer a:hover { color: #fff; }
+
+        /* ── Responsive ── */
+        @media (max-width: 768px) {
+            .course-hero { padding: 100px 1.5rem 2.5rem; }
+            .course-logo-text { font-size: 1.4rem; letter-spacing: 0.12em; }
+            .course-logo-numeral { font-size: 1.2rem; }
+            .session { padding-left: 3rem; }
+            .session-number { left: 1.25rem; }
+            .action-bar { flex-direction: column; align-items: stretch; }
+            .action-btn { justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="site-nav">
+        <div class="nav-inner">
+            <a href="/" class="nav-brand">Sergio Béjar López</a>
+            <a href="/#teaching" class="nav-back"><i class="fas fa-arrow-left"></i> Regresar al sitio</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="course-hero">
+        <div class="hero-inner">
+            <div class="course-logo">
+                <div class="course-logo-text">DISEÑO DE<br>INVESTIGACIÓN</div>
+                <span class="course-logo-accent"></span>
+                <div class="course-logo-numeral">I</div>
+            </div>
+            <div class="course-meta">
+                <strong>CIDE</strong> · Maestría y Doctorado en Ciencia Política · <strong>Otoño 2026</strong><br>
+                Martes 17:00–20:00 · 18 de agosto al 1 de diciembre · 16 sesiones
+            </div>
+        </div>
+    </section>
+
+    <!-- Content -->
+    <main class="content">
+
+        <div class="course-description">
+            <p>Toda investigación es un conjunto de decisiones, y cada decisión tiene consecuencias para lo que se puede saber. Un buen diseño no garantiza un buen resultado, pero un mal diseño sí garantiza que los resultados carecerán de valor inferencial, sin importar cuán sofisticado sea el análisis.</p>
+
+            <p>Este seminario es el primero de una secuencia de dos semestres dedicada al diseño de investigación en ciencia política. El primer semestre se concentra en la arquitectura de un proyecto de investigación: formular preguntas (causales, descriptivas, conceptuales), construir argumentos, formar conceptos, y conocer el menú de estrategias de diseño disponibles. El segundo semestre (Primavera 2027) entra a la inferencia causal formal y a la construcción de la propuesta de tesis.</p>
+        </div>
+
+        <div class="course-question">
+            <strong>Pregunta que recorre el curso</strong>
+            ¿Qué tendría que ser cierto del mundo para que mi argumento fuera falso?
+        </div>
+
+        <!-- Modules -->
+        <div class="modules-header">
+            <h2 class="modules-title">Temario</h2>
+            <div class="modules-line"></div>
+        </div>
+
+        <!-- Bloque I -->
+        <div class="module">
+            <div class="module-header" onclick="this.parentElement.classList.toggle('open')">
+                <div style="display: flex; align-items: center;">
+                    <span class="module-number">I</span>
+                    <span class="module-name">Fundamentos: de la pregunta al argumento</span>
+                </div>
+                <i class="fas fa-chevron-down module-toggle"></i>
+            </div>
+            <div class="module-sessions">
+                <div class="session">
+                    <span class="session-number">1</span>
+                    <div class="session-title">Problemas de demarcación, evidencia y cambio científico</div>
+                    <ul class="session-readings">
+                        <li>Blair, Coppock & Humphreys (2023). <em>Research Design in the Social Sciences</em>, cap. 1</li>
+                        <li>Popper (1959). <em>The Logic of Scientific Discovery</em>, cap. 1</li>
+                    </ul>
+                    <div class="session-hint">Sesión ligera: presentaciones + punto de partida epistemológico</div>
+                </div>
+                <div class="session">
+                    <span class="session-number">2</span>
+                    <div class="session-title">Preguntas de investigación y puzzles empíricos</div>
+                    <ul class="session-readings">
+                        <li>Geddes (2003). <em>Paradigms and Sand Castles</em>, cap. 1</li>
+                        <li>KKV (1994). <em>Designing Social Inquiry</em>, cap. 1</li>
+                    </ul>
+                    <div class="session-hint">De la curiosidad a la pregunta investigable</div>
+                </div>
+                <div class="session">
+                    <span class="session-number">3</span>
+                    <div class="session-title">La revisión de literatura como argumento</div>
+                    <ul class="session-readings">
+                        <li>Knopf (2006). "Doing a Literature Review"</li>
+                        <li>Trachtenberg (2006). <em>The Craft of International History</em>, cap. 6</li>
+                    </ul>
+                    <div class="session-hint">No es un resumen: es identificar un hueco y justificar una contribución</div>
+                </div>
+                <div class="session">
+                    <span class="session-number">4</span>
+                    <div class="session-title">Causalidad y mecanismos causales</div>
+                    <ul class="session-readings">
+                        <li>Brady (2008). "Causation and Explanation in Social Science"</li>
+                        <li>KKV (1994). <em>Designing Social Inquiry</em>, cap. 2</li>
+                    </ul>
+                    <div class="session-hint">¿Qué significa decir que X causa Y?</div>
+                </div>
+                <div class="session">
+                    <span class="session-number">5</span>
+                    <div class="session-title">Contrafactuales: la lógica del "qué hubiera pasado si no"</div>
+                    <ul class="session-readings">
+                        <li>Fearon (1991). "Counterfactuals and Hypothesis Testing in Political Science"</li>
+                        <li>Morgan & Winship (2015). <em>Counterfactuals and Causal Inference</em>, cap. 1</li>
+                    </ul>
+                    <div class="session-hint">Intuición contrafactual sin formalismo — la base para el segundo semestre</div>
+                </div>
+                <div class="session">
+                    <span class="session-number">6</span>
+                    <div class="session-title">Hipótesis y expectativas observables</div>
+                    <ul class="session-readings">
+                        <li>Geddes (2003). <em>Paradigms and Sand Castles</em>, cap. 2</li>
+                        <li>KKV (1994). <em>Designing Social Inquiry</em>, cap. 3</li>
+                    </ul>
+                    <div class="session-hint">Derivar implicaciones comprobables y diseñar pruebas cruciales</div>
+                </div>
+                <div class="session">
+                    <span class="session-number">7</span>
+                    <div class="session-title">Conceptos, medición y operacionalización</div>
+                    <ul class="session-readings">
+                        <li>Adcock & Collier (2001). "Measurement Validity"</li>
+                        <li>Gerring (2012). <em>Social Science Methodology</em>, cap. 5</li>
+                    </ul>
+                    <div class="session-hint">Los cuatro niveles de validez de constructo</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Taller y examen -->
+        <div class="module">
+            <div class="module-header" onclick="this.parentElement.classList.toggle('open')">
+                <div style="display: flex; align-items: center;">
+                    <span class="module-number" style="background: var(--orange);">—</span>
+                    <span class="module-name">Taller y examen parcial</span>
+                </div>
+                <i class="fas fa-chevron-down module-toggle"></i>
+            </div>
+            <div class="module-sessions">
+                <div class="session entrega">
+                    <span class="session-number">8</span>
+                    <div class="session-title">Taller intermedio: presentación de memos parciales</div>
+                    <div class="session-hint">Entrega: memo parcial (8–10 pp), 48 horas antes</div>
+                </div>
+                <div class="session">
+                    <span class="session-number">9</span>
+                    <div class="session-title">El menú de diseños de investigación</div>
+                    <ul class="session-readings">
+                        <li>Blair et al. (2023). <em>Research Design in the Social Sciences</em>, caps. 2–3</li>
+                        <li>Mahoney & Goertz (2006). "A Tale of Two Cultures"</li>
+                    </ul>
+                    <div class="session-hint">Familias de diseño y el trade-off validez interna/externa</div>
+                </div>
+                <div class="session parcial">
+                    <span class="session-number">10</span>
+                    <div class="session-title">Examen parcial aplicado</div>
+                    <div class="session-hint">Diagnóstico de un diseño hipotético. Una hoja de conceptos permitida</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bloque II -->
+        <div class="module">
+            <div class="module-header" onclick="this.parentElement.classList.toggle('open')">
+                <div style="display: flex; align-items: center;">
+                    <span class="module-number">II</span>
+                    <span class="module-name">Estrategias de diseño y tipos de datos</span>
+                </div>
+                <i class="fas fa-chevron-down module-toggle"></i>
+            </div>
+            <div class="module-sessions">
+                <div class="session">
+                    <span class="session-number">11</span>
+                    <div class="session-title">Selección de casos: lógica, estrategias y trampas</div>
+                    <ul class="session-readings">
+                        <li>Geddes (2003). <em>Paradigms and Sand Castles</em>, cap. 3</li>
+                        <li>Seawright & Gerring (2008). "Case-Selection Techniques"</li>
+                    </ul>
+                    <div class="session-hint">Selección en la VD y cómo evitarla</div>
+                </div>
+                <div class="session entrega">
+                    <span class="session-number">12</span>
+                    <div class="session-title">Estudios de caso y comparación como estrategia de diseño</div>
+                    <ul class="session-readings">
+                        <li>Gerring (2004). "What is a Case Study and What is it Good for?"</li>
+                        <li>Bennett & Elman (2006). "Qualitative Research"</li>
+                    </ul>
+                    <div class="session-hint">Entrega: análisis crítico de tesis doctoral (10–12 pp)</div>
+                </div>
+                <div class="session">
+                    <span class="session-number">13</span>
+                    <div class="session-title">La lógica de la comparación estadística</div>
+                    <ul class="session-readings">
+                        <li>Achen (2005). "Let's Put Garbage-Can Regressions Where They Belong"</li>
+                        <li>Snyder (2001). "Scaling Down: The Subnational Comparative Method"</li>
+                    </ul>
+                    <div class="session-hint">La lógica del N grande y las regresiones de bote de basura</div>
+                </div>
+                <div class="session">
+                    <span class="session-number">14</span>
+                    <div class="session-title">Datos I: encuestas, entrevistas, archivos, trabajo de campo</div>
+                    <ul class="session-readings">
+                        <li>Kapiszewski et al. (2015). <em>Field Research in Political Science</em>, caps. 1–2</li>
+                        <li>Mosley (2013). <em>Interview Research in Political Science</em>, cap. 1</li>
+                    </ul>
+                    <div class="session-hint">Los datos interactúan con el diseño + ética en el campo</div>
+                </div>
+                <div class="session">
+                    <span class="session-number">15</span>
+                    <div class="session-title">Datos II: la lógica de los experimentos y cuasi-experimentos</div>
+                    <ul class="session-readings">
+                        <li>Dunning (2012). <em>Natural Experiments in the Social Sciences</em>, caps. 1–2</li>
+                        <li>Gerber & Green (2012). <em>Field Experiments</em>, cap. 1</li>
+                    </ul>
+                    <div class="session-hint">Por qué la aleatorización resuelve (y no resuelve) el problema causal</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Taller final -->
+        <div class="module">
+            <div class="module-header" onclick="this.parentElement.classList.toggle('open')">
+                <div style="display: flex; align-items: center;">
+                    <span class="module-number" style="background: var(--orange);">—</span>
+                    <span class="module-name">Taller final</span>
+                </div>
+                <i class="fas fa-chevron-down module-toggle"></i>
+            </div>
+            <div class="module-sessions">
+                <div class="session entrega">
+                    <span class="session-number">16</span>
+                    <div class="session-title">Taller final: presentación de research design memos</div>
+                    <div class="session-hint">Entrega: research design memo final (15–20 pp), 48 horas antes</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Action bar -->
+        <div class="action-bar">
+            <a href="https://bejarlopez.com/diseno-investigacion/" class="action-btn primary" target="_blank">
+                <i class="fas fa-file-alt"></i> Programa completo
+            </a>
+            <a href="https://github.com/Sergio-Bejar/diseno-investigacion" class="action-btn secondary" target="_blank">
+                <i class="fab fa-github"></i> Repositorio
+            </a>
+            <a href="mailto:sergio.bejar@cide.edu" class="action-btn secondary">
+                <i class="fas fa-envelope"></i> Contacto
+            </a>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="course-footer">
+        <a href="/">Sergio Béjar López</a> · CIDE · División de Estudios Políticos · Otoño 2026
+    </footer>
+
+</body>
+</html>
