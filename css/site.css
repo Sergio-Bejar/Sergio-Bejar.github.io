@@ -152,6 +152,20 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--mustard); outli
 .mentorship-levels > div { display: flex; justify-content: space-between; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid var(--line); }
 .mentorship-levels strong { font-family: var(--serif); }
 .mentorship-levels span:last-child { color: var(--muted); font-size: .84rem; text-align: right; }
+.teaching-photo-grid { display: grid; grid-template-columns: minmax(0, 760px); justify-content: center; }
+.teaching-photo { margin: 0; }
+.teaching-photo img { width: 100%; }
+.agenda-photo { width: min(100%, 390px); justify-self: center; }
+.agenda-photo img { aspect-ratio: 3 / 4; object-fit: cover; }
+.pucp-crop { height: clamp(190px, 28vw, 280px); overflow: hidden; background: var(--line); }
+.pucp-crop img { height: 100%; object-fit: cover; object-position: center top; }
+.teaching-photo figcaption { display: grid; gap: .25rem; padding-top: .75rem; color: var(--muted); font-size: .82rem; }
+.teaching-photo figcaption strong { color: var(--ink); font: 600 1rem/1.35 var(--serif); }
+.publication-circulation { align-items: center; }
+.publication-notes-photo { width: min(390px, 100%); margin: 0; justify-self: center; }
+.publication-notes-photo img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; }
+.publication-notes-photo figcaption { display: grid; gap: .25rem; padding-top: .75rem; color: var(--muted); font-size: .82rem; }
+.publication-notes-photo figcaption strong { color: var(--ink); font: 600 1rem/1.35 var(--serif); }
 .prose { max-width: 720px; }
 .prose p { margin-top: 0; margin-bottom: 1.3rem; }
 .photo-stack { display: grid; gap: 1rem; }
@@ -204,6 +218,7 @@ html[lang="es"] .lang-es { display: revert !important; }
   .institution-list li { grid-template-columns: 58px 1fr; gap: .8rem; }
   .mentorship-levels > div { align-items: flex-start; flex-direction: column; }
   .mentorship-levels span:last-child { text-align: left; }
+  .teaching-photo-grid { grid-template-columns: 1fr; }
   .hero-socials { flex-wrap: wrap; }
   .profile-label { width: 100%; }
 }
