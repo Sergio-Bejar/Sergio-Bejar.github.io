@@ -138,6 +138,20 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--mustard); outli
 .public-writing-home .public-writing-copy { max-width: 560px; color: #c9d2d8; font-family: var(--serif); font-size: 1.06rem; }
 .public-writing-home .btn { margin-top: .75rem; }
 .course-link { display: inline-block; margin-top: .7rem; font-size: .82rem; font-weight: 700; }
+.teaching-principles .card { min-height: 100%; }
+.course-grid .card { display: flex; flex-direction: column; }
+.course-grid .course-link { margin-top: auto; padding-top: .7rem; }
+.course-meta { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .35rem 1rem; color: var(--copper-dark); font-size: .75rem; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; }
+.teaching-history { display: grid; grid-template-columns: minmax(250px, .7fr) minmax(0, 1.3fr); gap: clamp(2.5rem, 8vw, 7rem); align-items: start; }
+.institution-list { margin: 0; padding: 0; border-top: 1px solid #51677a; list-style: none; }
+.institution-list li { display: grid; grid-template-columns: 72px 1fr; gap: 1.25rem; padding: 1.25rem 0; border-bottom: 1px solid #51677a; }
+.institution-list strong { color: #fff; font-family: var(--serif); font-size: 1.08rem; }
+.institution-list p { margin: .35rem 0 0; color: #c9d2d8; font-size: .88rem; }
+.institution-years { color: #d58b6e; font-size: .76rem; font-weight: 700; }
+.mentorship-levels { border-top: 1px solid var(--line); }
+.mentorship-levels > div { display: flex; justify-content: space-between; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid var(--line); }
+.mentorship-levels strong { font-family: var(--serif); }
+.mentorship-levels span:last-child { color: var(--muted); font-size: .84rem; text-align: right; }
 .prose { max-width: 720px; }
 .prose p { margin-top: 0; margin-bottom: 1.3rem; }
 .photo-stack { display: grid; gap: 1rem; }
@@ -169,7 +183,7 @@ html[lang="es"] .lang-es { display: revert !important; }
   .navlinks > a { padding: .55rem 0; }
   .navlinks > a.active { box-shadow: none; color: #fff; }
   .lang { border-left: 0; border-top: 1px solid rgba(255,255,255,.2); padding: .65rem 0 0; }
-  .hero-grid, .book-grid, .writing-hero-grid, .editorial-grid { grid-template-columns: 1fr; }
+  .hero-grid, .book-grid, .writing-hero-grid, .editorial-grid, .teaching-history { grid-template-columns: 1fr; }
   .writing-deck { max-width: 700px; }
   .editorial-heading { position: static; }
   .hero-photo { width: min(440px, 100%); }
@@ -187,6 +201,9 @@ html[lang="es"] .lang-es { display: revert !important; }
   .featured-story { grid-template-columns: 38px minmax(0, 1fr); }
   .editorial-list a { grid-template-columns: 48px minmax(0, 1fr) auto; gap: .75rem; }
   .publication { grid-template-columns: 1fr; gap: .35rem; }
+  .institution-list li { grid-template-columns: 58px 1fr; gap: .8rem; }
+  .mentorship-levels > div { align-items: flex-start; flex-direction: column; }
+  .mentorship-levels span:last-child { text-align: left; }
   .hero-socials { flex-wrap: wrap; }
   .profile-label { width: 100%; }
 }
