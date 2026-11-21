@@ -5,7 +5,7 @@ function setLanguage(lang, updateUrl = true) {
   document.documentElement.lang = lang;
   document.title = titles[lang];
   document.querySelectorAll('[data-lang]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.lang === lang)));
-  const subject = lang === 'es' ? 'Apoyo al proyecto de polarización ideológica y afectiva 2027' : 'Supporting the 2027 ideological and affective polarization project';
+  const subject = lang === 'es' ? 'Aportación económica al proyecto de polarización 2027' : 'Financial contribution to the 2027 polarization project';
   document.querySelectorAll('.contact-cta').forEach(contact => {
     const recipient = contact.getAttribute('href').split('?')[0];
     contact.href = recipient + '?subject=' + encodeURIComponent(subject);
@@ -50,7 +50,7 @@ function inquiry() {
   const es = document.documentElement.lang === 'es';
   return {
     recipient:data.get('recipient'),
-    subject:es ? 'Conversación sobre el proyecto de polarización 2027' : 'Inquiry about the 2027 polarization project',
+    subject:es ? 'Consulta sobre financiamiento del proyecto de polarización 2027' : 'Funding inquiry for the 2027 polarization project',
     body:`${data.get('message')}\n\n${es ? 'Nombre' : 'Name'}: ${data.get('name')}\n${es ? 'Correo' : 'Email'}: ${data.get('email')}`
   };
 }
